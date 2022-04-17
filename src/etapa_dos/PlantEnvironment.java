@@ -1,6 +1,7 @@
 package etapa_dos;
 
 import frsf.cidisi.faia.environment.Environment;
+import frsf.cidisi.faia.state.AgentState;
 import frsf.cidisi.faia.agent.Action;
 import frsf.cidisi.faia.agent.Agent;
 import frsf.cidisi.faia.agent.Perception;
@@ -16,19 +17,24 @@ public class PlantEnvironment extends Environment {
 		PlantPerception perception = new PlantPerception();
 		return null;
 	}
-	
+
 	@Override
-    public PlantEnvironmentState getEnvironmentState() {
-        return (PlantEnvironmentState) super.getEnvironmentState();
-    }
+	public PlantEnvironmentState getEnvironmentState() {
+		return (PlantEnvironmentState) super.getEnvironmentState();
+	}
 	@Override
-    public String toString() {
-        return environmentState.toString();
-    }
+	public void updateState(AgentState ast,Action action) {
+		super.updateState(ast, action);
+		((PlantEnvironmentState)environmentState).update();
+	}
 	@Override
-    public boolean agentFailed(Action actionReturned) {
+	public String toString() {
+		return environmentState.toString();
+	}
+	@Override
+	public boolean agentFailed(Action actionReturned) {
 		return false;
 	}
-	 
+
 
 }
