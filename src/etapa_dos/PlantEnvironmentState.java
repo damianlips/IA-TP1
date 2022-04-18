@@ -15,6 +15,12 @@ public class PlantEnvironmentState extends EnvironmentState {
 	private Boolean llegoZombie;
 	//Tiempo hasta que aparezca el proximo zombie
 	private int siguienteZombie;
+	//Posicion del agente
+	private int agentX;
+	private int agentY;
+	
+	
+	
 	@Override
 	public void initState() {
 		// TODO Auto-generated method stub
@@ -28,36 +34,45 @@ public class PlantEnvironmentState extends EnvironmentState {
 		cantZombies=5+(int)Math.random()*15;
 		llegoZombie=false;
 		siguienteZombie=3+(int)Math.random()*4;
+		agentX=0;
+		agentY=2;
 	}
 	//Funcion que se ejecuta en cada ciclo accion-percepcion
 	public void update() {
 		//Recorre la matriz y updatea los zombies y girasoles
 		for(int i=0;i<9;i++) {
 			for(int j=0;j<5;j++) {
-				if(mapa[j][i].getClass()==Zombie.class) {
+				if(mapa[j][i] instanceof Zombie) {
 					((Zombie)mapa[j][i]).decrementarProxMovimiento();
 					if(((Zombie)mapa[j][i]).puedeMoverse()) {
 						if(i==0) {
 							llegoZombie=true;
+							mapa[j][i]=0;
 						}
 						else {
-							mapa[j][i-1]=mapa[j][i];
-							((Zombie)mapa[j][i-1]).setProxMovimiento(1+(int)Math.random()*2);
+							if(mapa[j][i-1] instanceof Zombie) {
+								((Zombie)mapa[j][i]).setProxMovimiento(1);
+							}
+							else {
+								mapa[j][i-1]=mapa[j][i];
+								mapa[j][i]=0;
+								((Zombie)mapa[j][i-1]).setProxMovimiento(1+(int)(Math.random()*2));
+							}						
+							
 						}
-						mapa[j][i]=0;
 					}
 				}
-				else if(mapa[j][i].getClass()==Girasol.class) {
-					((Girasol)mapa[j][i]).agregarSoles(1+(int)Math.random()*2);
+				else if(mapa[j][i] instanceof Girasol) {
+					((Girasol)mapa[j][i]).agregarSoles(1+(int)(Math.random()*2));
 				}
 			}
 		}
 		//Generacion de nuevos zombies
 		if(cantZombies>0) {
 			if(siguienteZombie<=0) {
-				int posicion=(int)Math.random()*4;
+				int posicion=(int)(Math.random()*4);
 				mapa[posicion][8]=new Zombie();
-				siguienteZombie=3+(int)Math.random()*4;
+				siguienteZombie=3+(int)(Math.random()*4);
 			}
 			else siguienteZombie--;
 		}
@@ -66,6 +81,104 @@ public class PlantEnvironmentState extends EnvironmentState {
 	public String toString() {
 		// TODO Auto-generated method stub
 		return null;
+	}
+	public Boolean getLlegoZombie() {
+		return llegoZombie;
+	}
+	public void setLlegoZombie(Boolean llegoZombie) {
+		this.llegoZombie = llegoZombie;
+	}
+	public int getAgentX() {
+		return agentX;
+	}
+	public void setAgentX(int agentX) {
+		this.agentX = agentX;
+	}
+	public int getAgentY() {
+		return agentY;
+	}
+	public void setAgentY(int agentY) {
+		this.agentY = agentY;
+	}
+	
+	public Sensor getIzquierda(int x, int y){
+		Sensor sensor = new Sensor();
+		sensor.tipo=0;
+		for(int i=(x-1) ; i>=0 ; --i) {
+			if(mapa[y][i] instanceof Zombie) {
+				sensor.tipo=1;
+				sensor.distancia=(x-i);
+				sensor.energia = ((Zombie)mapa[y][i]).getTipoZombie();
+				i=-1;
+			}
+			else if(mapa[y][i] instanceof Girasol) {
+				sensor.tipo=2;
+				sensor.distancia=(x-i);
+				sensor.energia = ((Girasol)mapa[y][i]).getCantSoles();
+				i=-1;
+			}
+		}
+		return sensor;
+	}
+	
+	public Sensor getDerecha(int x, int y){
+		Sensor sensor = new Sensor();
+		sensor.tipo=0;
+		for(int i=(x+1) ; i<9 ; ++i) {
+			if(mapa[y][i] instanceof Zombie) {
+				sensor.tipo=1;
+				sensor.distancia=(i-x);
+				sensor.energia = ((Zombie)mapa[y][i]).getTipoZombie();
+				i=10;
+			}
+			else if(mapa[y][i] instanceof Girasol) {
+				sensor.tipo=2;
+				sensor.distancia=(i-x);
+				sensor.energia = ((Girasol)mapa[y][i]).getCantSoles();
+				i=10;
+			}
+		}
+		return sensor;
+	}
+	
+	public Sensor getArriba(int x, int y){
+		Sensor sensor = new Sensor();
+		sensor.tipo=0;
+		for(int i=(y-1) ; i>=0 ; --i) {
+			if(mapa[i][x] instanceof Zombie) {
+				sensor.tipo=1;
+				sensor.distancia=(y-i);
+				sensor.energia = ((Zombie)mapa[i][x]).getTipoZombie();
+				i=-1;
+			}
+			else if(mapa[i][x] instanceof Girasol) {
+				sensor.tipo=2;
+				sensor.distancia=(y-i);
+				sensor.energia = ((Girasol)mapa[i][x]).getCantSoles();
+				i=-1;
+			}
+		}
+		return sensor;
+	}
+	
+	public Sensor getAbajo(int x, int y){
+		Sensor sensor = new Sensor();
+		sensor.tipo=0;
+		for(int i=(y+1) ; i<5 ; ++i) {
+			if(mapa[i][x] instanceof Zombie) {
+				sensor.tipo=1;
+				sensor.distancia=(i-y);
+				sensor.energia = ((Zombie)mapa[i][x]).getTipoZombie();
+				i=6;
+			}
+			else if(mapa[i][x] instanceof Girasol) {
+				sensor.tipo=2;
+				sensor.distancia=(i-y);
+				sensor.energia = ((Girasol)mapa[i][x]).getCantSoles();
+				i=6;
+			}
+		}
+		return sensor;
 	}
 
 }

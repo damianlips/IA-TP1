@@ -4,8 +4,8 @@ public class Zombie {
     private int proxMovimiento;
     private int tipoZombie;
     public Zombie() {
-        proxMovimiento=1+(int)Math.random()*2;
-        tipoZombie=1+(int)Math.random()*4;
+        proxMovimiento=1+(int)(Math.random()*2);
+        tipoZombie=1+(int)(Math.random()*4);
     }
     public Boolean puedeMoverse() {
         return proxMovimiento==0;

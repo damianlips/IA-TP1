@@ -15,7 +15,14 @@ public class PlantEnvironment extends Environment {
 	public Perception getPercept() {
 		// TODO Auto-generated method stub
 		PlantPerception perception = new PlantPerception();
-		return null;
+		int x = ((PlantEnvironmentState)environmentState).getAgentX();
+		int y = ((PlantEnvironmentState)environmentState).getAgentY();
+		
+		perception.arriba=this.getArriba(x, y);
+		perception.abajo=this.getAbajo(x, y);
+		perception.izquierda=this.getIzquierda(x, y);
+		perception.derecha=this.getDerecha(x, y);
+		return perception;
 	}
 
 	@Override
@@ -33,7 +40,20 @@ public class PlantEnvironment extends Environment {
 	}
 	@Override
 	public boolean agentFailed(Action actionReturned) {
-		return false;
+		return ((PlantEnvironmentState)environmentState).getLlegoZombie();
+	}
+	
+	public Sensor getArriba(int x, int y) {
+		return ((PlantEnvironmentState)this.environmentState).getArriba(x, y);
+	}
+	public Sensor getAbajo(int x, int y) {
+		return ((PlantEnvironmentState)this.environmentState).getAbajo(x, y);
+	}
+	public Sensor getIzquierda(int x, int y) {
+		return ((PlantEnvironmentState)this.environmentState).getIzquierda(x, y);
+	}
+	public Sensor getDerecha(int x, int y) {
+		return ((PlantEnvironmentState)this.environmentState).getDerecha(x, y);
 	}
 
 
