@@ -163,16 +163,16 @@ public class PlantEnvironmentState extends EnvironmentState {
 	
 	public Sensor getAbajo(int x, int y){
 		Sensor sensor = new Sensor();
-		sensor.tipo=0;
+		sensor.tipo= Sensor.VACIO;
 		for(int i=(y+1) ; i<5 ; ++i) {
 			if(mapa[i][x] instanceof Zombie) {
-				sensor.tipo=1;
+				sensor.tipo=Sensor.ZOMBIE;
 				sensor.distancia=(i-y);
 				sensor.energia = ((Zombie)mapa[i][x]).getTipoZombie();
 				i=6;
 			}
 			else if(mapa[i][x] instanceof Girasol) {
-				sensor.tipo=2;
+				sensor.tipo=Sensor.GIRASOL;
 				sensor.distancia=(i-y);
 				sensor.energia = ((Girasol)mapa[i][x]).getCantSoles();
 				i=6;
