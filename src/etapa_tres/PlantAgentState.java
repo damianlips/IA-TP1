@@ -1,5 +1,7 @@
 package etapa_tres;
 
+import java.util.Random;
+
 import etapa_dos.PlantPerception;
 import etapa_dos.Sensor;
 import frsf.cidisi.faia.agent.Perception;
@@ -77,7 +79,7 @@ public class PlantAgentState extends SearchBasedAgentState {
 		//Primero sensor a la izquierda
 		for(int i=1 ; i<per.izquierda.distancia ; ++i ) {
 			matrizZombies[posY][posX-i] = 0;
-			matrizGirasoles[posY][posX-i] = 0;						
+			matrizGirasoles[posY][posX-i] = -1;						
 		}
 		switch(per.izquierda.tipo) {
 		case Sensor.GIRASOL:
@@ -90,7 +92,7 @@ public class PlantAgentState extends SearchBasedAgentState {
 		//Derecha
 		for(int i=1 ; i<per.derecha.distancia ; ++i ) {
 			matrizZombies[posY][posX+i] = 0;
-			matrizGirasoles[posY][posX+i] = 0;						
+			matrizGirasoles[posY][posX+i] = -1;						
 		}
 		switch(per.derecha.tipo) {
 		case Sensor.GIRASOL:
@@ -104,7 +106,7 @@ public class PlantAgentState extends SearchBasedAgentState {
 		//Arriba
 		for(int i=1 ; i<per.arriba.distancia ; ++i) {
 			matrizZombies[posY-i][posX] = 0;
-			matrizGirasoles[posY-i][posX] = 0;
+			matrizGirasoles[posY-i][posX] = -1;
 			switch(per.arriba.tipo) {
 			case Sensor.GIRASOL:
 				matrizGirasoles[posY-per.arriba.distancia][posX]=per.arriba.energia;
@@ -117,7 +119,7 @@ public class PlantAgentState extends SearchBasedAgentState {
 		//Abajo
 		for(int i=1 ; i<per.abajo.distancia ; ++i) {
 			matrizZombies[posY+i][posX] = 0;
-			matrizGirasoles[posY+i][posX] = 0;
+			matrizGirasoles[posY+i][posX] = -1;
 			switch(per.abajo.tipo) {
 			case Sensor.GIRASOL:
 				matrizGirasoles[posY+per.abajo.distancia][posX]=per.abajo.energia;
@@ -162,7 +164,22 @@ public class PlantAgentState extends SearchBasedAgentState {
 	
 	@Override
 	public void initState() {
-		// TODO Auto-generated method stub
+		matrizZombies = new Integer[5][9];
+		matrizGirasoles = new Integer[5][9];
+		for(int i=0; i<5; i++) {
+			for(int j=0; j<9; j++) {
+				matrizZombies[i][j]= DESCONOCIDO;
+				matrizGirasoles[i][j] = DESCONOCIDO;
+			}
+		}
+		Random rand = new Random();
+		energia=rand.nextInt(19)+2; //Genero random entre 0 y (19-1) y sumo 2 para tener entre 2 y 20
+		posX=0;
+		posY=2;
+		zombiesRestantes= rand.nextInt(16)+5;
+		energiaGastada=0;
+		movimientos=0;
+		
 		
 	}
 

@@ -80,6 +80,29 @@ public class PlantEnvironmentState extends EnvironmentState {
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub
+		
+		String[][] matriz = new String[5][9];
+		
+		for(int i=0; i<5; i++) 	for(int j=0; j<9; j++) matriz[i][j] = "XX";
+		
+		for(int i=0; i<5; i++) {
+			for(int j=0; j<9; j++) {
+				if(mapa[i][j] instanceof Zombie) {
+					matriz[i][j] = "Z" + ((Zombie)mapa[i][j]).getTipoZombie();
+				}
+				else if(mapa[i][j] instanceof Girasol) {
+					matriz[i][j] = "G" + ((Girasol)mapa[i][j]).getCantSoles();
+				}
+			}
+		}
+		matriz[agentX][agentY] = "Pl";
+		
+		for(int i=0; i<5; i++) {
+			for(int j=0; j<9; j++) {
+				System.out.print(matriz[i][j] + " ");
+			}
+		}
+		
 		return null;
 	}
 	public Boolean getLlegoZombie() {
