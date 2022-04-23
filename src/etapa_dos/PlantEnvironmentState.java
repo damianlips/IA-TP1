@@ -180,5 +180,30 @@ public class PlantEnvironmentState extends EnvironmentState {
 		}
 		return sensor;
 	}
+	public int getEnergiaAgente() {
+		return energiaAgente;
+	}
+	public void setEnergiaAgente(int energiaAgente) {
+		this.energiaAgente = energiaAgente;
+	}
+	public Object[][] getMapa() {
+		return mapa;
+	}
+	public void setMapa(Object[][] mapa) {
+		this.mapa = mapa;
+	}
+	public int getCantZombies() {
+		return cantZombies;
+	}
+	public void setCantZombies(int cantZombies) {
+		this.cantZombies = cantZombies;
+	}
+	public int getSiguienteZombie() {
+		return siguienteZombie;
+	}
+	public void setSiguienteZombie(int siguienteZombie) {
+		this.siguienteZombie = siguienteZombie;
+	}
+	
 
 }

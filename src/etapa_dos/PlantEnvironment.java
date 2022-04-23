@@ -40,7 +40,9 @@ public class PlantEnvironment extends Environment {
 	}
 	@Override
 	public boolean agentFailed(Action actionReturned) {
-		return ((PlantEnvironmentState)environmentState).getLlegoZombie();
+		PlantEnvironmentState state = ((PlantEnvironmentState)environmentState);
+		
+		return (state.getLlegoZombie() || state.getEnergiaAgente()==0);
 	}
 	
 	public Sensor getArriba(int x, int y) {

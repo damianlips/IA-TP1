@@ -133,9 +133,33 @@ public class PlantAgentState extends SearchBasedAgentState {
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub
+		
+		String[][] matriz = new String[5][9];
+		
+		for(int i=0; i<5; i++) 	for(int j=0; j<9; j++) matriz[i][j] = "XX";
+		
+		for(int i=0; i<5; i++) {
+			for(int j=0; j<9; j++) {
+				if(matrizZombies[i][j] > 0) {
+					matriz[i][j] = "Z" + matrizZombies[i][j];
+ 				}
+				if(matrizGirasoles[i][j] > 0) {
+					matriz[i][j] = "G" + matrizGirasoles[i][j];
+ 				}
+			}
+		}
+		matriz[posX][posY] = "Pl";
+		
+		for(int i=0; i<5; i++) {
+			for(int j=0; j<9; j++) {
+				System.out.print(matriz[i][j] + " ");
+			}
+		}
+		
 		return null;
 	}
-
+	
+	
 	@Override
 	public void initState() {
 		// TODO Auto-generated method stub

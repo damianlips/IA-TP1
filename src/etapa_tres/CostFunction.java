@@ -7,8 +7,8 @@ public class CostFunction implements IStepCostFunction {
 
 	@Override
 	public double calculateCost(NTree node) {
-		// TODO Auto-generated method stub
-		return 0;
+		PlantAgentState state = ((PlantAgentState) node.getAgentState());
+		return state.getEnergiaGastada() + state.getMovimientos();
 	}
 
 }
