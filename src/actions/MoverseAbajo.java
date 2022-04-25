@@ -12,26 +12,27 @@ public class MoverseAbajo extends SearchAction{
     @Override
     public SearchBasedAgentState execute(SearchBasedAgentState s) {
         PlantAgentState p= (PlantAgentState) s;
-        if(p.getPosY()==0) return null;
-        p.setPosY(p.getPosY()-1);
+        if(p.getPosY()==4) return null;
+        p.setPosY(p.getPosY()+1);
         if(p.getMatrizZombies()[p.getPosY()][p.getPosX()]>0) p.setEnergia(p.getEnergia()-p.getMatrizZombies()[p.getPosY()][p.getPosX()]*2);
+        else if(p.getMatrizGirasoles()[p.getPosY()][p.getPosX()]>0) p.setEnergia(p.getEnergia()+p.getMatrizGirasoles()[p.getPosY()][p.getPosX()]);
         return p;
     }
 
     @Override
     public Double getCost() {
-        // TODO Auto-generated method stub
-        return null;
+        return 1d;
     }
 
     @Override
     public EnvironmentState execute(AgentState ast, EnvironmentState est) {
         PlantAgentState p= (PlantAgentState) ast;
         PlantEnvironmentState e = (PlantEnvironmentState) est;
-        if(p.getPosY()==0) return null;
-        p.setPosY(p.getPosY()-1);
+        if(p.getPosY()==4) return null;
+        p.setPosY(p.getPosY()+1);
         if(p.getMatrizZombies()[p.getPosY()][p.getPosX()]>0) p.setEnergia(p.getEnergia()-p.getMatrizZombies()[p.getPosY()][p.getPosX()]*2);
-        e.setAgentY(e.getAgentY()-1);
+        else if(p.getMatrizGirasoles()[p.getPosY()][p.getPosX()]>0) p.setEnergia(p.getEnergia()+p.getMatrizGirasoles()[p.getPosY()][p.getPosX()]);
+        e.setAgentY(e.getAgentY()+1);
         e.setEnergiaAgente(p.getEnergia());
         return e;
     }

@@ -37,6 +37,11 @@ public class PlantAgentState extends SearchBasedAgentState {
 	}
 	
 	
+	public PlantAgentState() {
+		// TODO Auto-generated constructor stub
+	}
+
+
 	@Override
 	public boolean equals(Object obj) {
 		if (!(obj instanceof PlantAgentState))

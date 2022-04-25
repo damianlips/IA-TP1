@@ -9,6 +9,7 @@ import frsf.cidisi.faia.agent.Perception;
 public class PlantEnvironment extends Environment {
 	public PlantEnvironment() {
 		this.environmentState = new PlantEnvironmentState();
+		this.environmentState.initState();
 	}
 
 	@Override

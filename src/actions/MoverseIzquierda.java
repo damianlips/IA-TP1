@@ -15,13 +15,13 @@ public class MoverseIzquierda extends SearchAction{
         if(p.getPosX()==0) return null;
         p.setPosX(p.getPosX()-1);
         if(p.getMatrizZombies()[p.getPosY()][p.getPosX()]>0) p.setEnergia(p.getEnergia()-p.getMatrizZombies()[p.getPosY()][p.getPosX()]*2);
+        else if(p.getMatrizGirasoles()[p.getPosY()][p.getPosX()]>0) p.setEnergia(p.getEnergia()+p.getMatrizGirasoles()[p.getPosY()][p.getPosX()]);
         return p;
     }
 
     @Override
     public Double getCost() {
-        // TODO Auto-generated method stub
-        return null;
+        return 1d;
     }
 
     @Override
@@ -31,6 +31,7 @@ public class MoverseIzquierda extends SearchAction{
         if(p.getPosX()==0) return null;
         p.setPosX(p.getPosX()+1);
         if(p.getMatrizZombies()[p.getPosY()][p.getPosX()]>0) p.setEnergia(p.getEnergia()-p.getMatrizZombies()[p.getPosY()][p.getPosX()]*2);
+        else if(p.getMatrizGirasoles()[p.getPosY()][p.getPosX()]>0) p.setEnergia(p.getEnergia()+p.getMatrizGirasoles()[p.getPosY()][p.getPosX()]);
         e.setAgentX(e.getAgentX()+1);
         e.setEnergiaAgente(p.getEnergia());
         return e;
