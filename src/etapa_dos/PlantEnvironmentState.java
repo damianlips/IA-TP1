@@ -83,7 +83,7 @@ public class PlantEnvironmentState extends EnvironmentState {
 		
 		String[][] matriz = new String[5][9];
 		
-		for(int i=0; i<5; i++) 	for(int j=0; j<9; j++) matriz[i][j] = "XX";
+		for(int i=0; i<5; i++) 	for(int j=0; j<9; j++) matriz[i][j] = "VV";
 		
 		for(int i=0; i<5; i++) {
 			for(int j=0; j<9; j++) {
@@ -95,12 +95,13 @@ public class PlantEnvironmentState extends EnvironmentState {
 				}
 			}
 		}
-		matriz[agentX][agentY] = "Pl";
+		matriz[agentY][agentX] = "Pl";
 		
 		for(int i=0; i<5; i++) {
 			for(int j=0; j<9; j++) {
 				System.out.print(matriz[i][j] + " ");
 			}
+			System.out.println();
 		}
 		
 		return null;
@@ -126,7 +127,8 @@ public class PlantEnvironmentState extends EnvironmentState {
 	
 	public Sensor getIzquierda(int x, int y){
 		Sensor sensor = new Sensor();
-		sensor.tipo=0;
+		sensor.tipo= Sensor.VACIO;
+		sensor.distancia=x;
 		for(int i=(x-1) ; i>=0 ; --i) {
 			if(mapa[y][i] instanceof Zombie) {
 				sensor.tipo=1;
@@ -146,7 +148,8 @@ public class PlantEnvironmentState extends EnvironmentState {
 	
 	public Sensor getDerecha(int x, int y){
 		Sensor sensor = new Sensor();
-		sensor.tipo=0;
+		sensor.tipo= Sensor.VACIO;
+		sensor.distancia=8-x;
 		for(int i=(x+1) ; i<9 ; ++i) {
 			if(mapa[y][i] instanceof Zombie) {
 				sensor.tipo=1;
@@ -166,7 +169,8 @@ public class PlantEnvironmentState extends EnvironmentState {
 	
 	public Sensor getArriba(int x, int y){
 		Sensor sensor = new Sensor();
-		sensor.tipo=0;
+		sensor.tipo= Sensor.VACIO;
+		sensor.distancia=y;
 		for(int i=(y-1) ; i>=0 ; --i) {
 			if(mapa[i][x] instanceof Zombie) {
 				sensor.tipo=1;
@@ -187,6 +191,7 @@ public class PlantEnvironmentState extends EnvironmentState {
 	public Sensor getAbajo(int x, int y){
 		Sensor sensor = new Sensor();
 		sensor.tipo= Sensor.VACIO;
+		sensor.distancia=4-y;
 		for(int i=(y+1) ; i<5 ; ++i) {
 			if(mapa[i][x] instanceof Zombie) {
 				sensor.tipo=Sensor.ZOMBIE;

@@ -38,7 +38,7 @@ public class PlantAgentState extends SearchBasedAgentState {
 	
 	
 	public PlantAgentState() {
-		// TODO Auto-generated constructor stub
+		this.initState();
 	}
 
 
@@ -82,7 +82,7 @@ public class PlantAgentState extends SearchBasedAgentState {
 	public void updateState(Perception p) {
 		PlantPerception per = (PlantPerception) p;
 		//Primero sensor a la izquierda
-		for(int i=1 ; i<per.izquierda.distancia ; ++i ) {
+		for(int i=1 ; i<=per.izquierda.distancia ; ++i ) {
 			matrizZombies[posY][posX-i] = 0;
 			matrizGirasoles[posY][posX-i] = -1;						
 		}
@@ -95,7 +95,7 @@ public class PlantAgentState extends SearchBasedAgentState {
 		}
 		
 		//Derecha
-		for(int i=1 ; i<per.derecha.distancia ; ++i ) {
+		for(int i=1 ; i<=per.derecha.distancia ; ++i ) {
 			matrizZombies[posY][posX+i] = 0;
 			matrizGirasoles[posY][posX+i] = -1;						
 		}
@@ -109,7 +109,7 @@ public class PlantAgentState extends SearchBasedAgentState {
 		
 		
 		//Arriba
-		for(int i=1 ; i<per.arriba.distancia ; ++i) {
+		for(int i=1 ; i<=per.arriba.distancia ; ++i) {
 			matrizZombies[posY-i][posX] = 0;
 			matrizGirasoles[posY-i][posX] = -1;
 			switch(per.arriba.tipo) {
@@ -122,7 +122,7 @@ public class PlantAgentState extends SearchBasedAgentState {
 		}
 		
 		//Abajo
-		for(int i=1 ; i<per.abajo.distancia ; ++i) {
+		for(int i=1 ; i<=per.abajo.distancia ; ++i) {
 			matrizZombies[posY+i][posX] = 0;
 			matrizGirasoles[posY+i][posX] = -1;
 			switch(per.abajo.tipo) {
@@ -150,17 +150,20 @@ public class PlantAgentState extends SearchBasedAgentState {
 				if(matrizZombies[i][j] > 0) {
 					matriz[i][j] = "Z" + matrizZombies[i][j];
  				}
-				if(matrizGirasoles[i][j] > 0) {
+				else 
+				if(matrizGirasoles[i][j] >= 0) {
 					matriz[i][j] = "G" + matrizGirasoles[i][j];
  				}
+				else if (matrizZombies[i][j]==0) matriz[i][j] = "VV";
 			}
 		}
-		matriz[posX][posY] = "Pl";
+		matriz[posY][posX] = "Pl";
 		
 		for(int i=0; i<5; i++) {
 			for(int j=0; j<9; j++) {
 				System.out.print(matriz[i][j] + " ");
 			}
+			System.out.println();
 		}
 		
 		return null;

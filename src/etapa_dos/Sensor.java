@@ -11,4 +11,8 @@ public class Sensor {
 	public int tipo; 
 	public int energia;
 	public int distancia;
+	@Override
+	public String toString() {
+		return "Sensor [tipo=" + tipo + ", energia=" + energia + ", distancia=" + distancia + "]";
+	}
 }

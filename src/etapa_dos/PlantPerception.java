@@ -26,4 +26,13 @@ public class PlantPerception extends Perception {
 
 	}
 
+
+	@Override
+	public String toString() {
+		return "PlantPerception [arriba=" + arriba + ", abajo=" + abajo + ", izquierda=" + izquierda + ", derecha="
+				+ derecha + "]";
+	}
+	
+	
+
 }
