@@ -143,6 +143,8 @@ public class PlantAgentState extends SearchBasedAgentState {
 		
 		String[][] matriz = new String[5][9];
 		
+		System.out.println("Energia: " + this.energia);
+		
 		for(int i=0; i<5; i++) 	for(int j=0; j<9; j++) matriz[i][j] = "XX";
 		
 		for(int i=0; i<5; i++) {
@@ -165,6 +167,7 @@ public class PlantAgentState extends SearchBasedAgentState {
 			}
 			System.out.println();
 		}
+		
 		
 		return null;
 	}

@@ -43,7 +43,7 @@ public class PlantEnvironment extends Environment {
 	public boolean agentFailed(Action actionReturned) {
 		PlantEnvironmentState state = ((PlantEnvironmentState)environmentState);
 		
-		return (state.getLlegoZombie() || state.getEnergiaAgente()==0);
+		return (state.getLlegoZombie() || state.getEnergiaAgente()<=0);
 	}
 	
 	public Sensor getArriba(int x, int y) {

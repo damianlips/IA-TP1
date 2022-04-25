@@ -73,6 +73,7 @@ public class PlantEnvironmentState extends EnvironmentState {
 				int posicion=(int)(Math.random()*4);
 				mapa[posicion][8]=new Zombie();
 				siguienteZombie=3+(int)(Math.random()*4);
+				--cantZombies;
 			}
 			else siguienteZombie--;
 		}

@@ -14,6 +14,7 @@ public class PlantarGirasol extends SearchAction{
     public SearchBasedAgentState execute(SearchBasedAgentState s) {
         PlantAgentState p = (PlantAgentState) s;
         if(p.getMatrizGirasoles()[p.getPosY()][p.getPosX()]>=0) return null;
+        if(p.getEnergia()<1) return null;
         p.setEnergia(p.getEnergia()-1);
         p.getMatrizGirasoles()[p.getPosY()][p.getPosX()]=0;
         return p;
@@ -30,6 +31,7 @@ public class PlantarGirasol extends SearchAction{
         PlantAgentState p = (PlantAgentState) ast;
         PlantEnvironmentState e = (PlantEnvironmentState) est;
         if(p.getMatrizGirasoles()[p.getPosY()][p.getPosX()]>=0) return null;
+        if(p.getEnergia()<1) return null;
         p.setEnergia(p.getEnergia()-1);
         p.getMatrizGirasoles()[p.getPosY()][p.getPosX()]=0;
         e.getMapa()[e.getAgentY()][e.getAgentX()]= new Girasol();
