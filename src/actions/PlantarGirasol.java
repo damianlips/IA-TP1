@@ -13,10 +13,14 @@ public class PlantarGirasol extends SearchAction{
     @Override
     public SearchBasedAgentState execute(SearchBasedAgentState s) {
         PlantAgentState p = (PlantAgentState) s;
+        if(p.getEnergia()<=0) return null;
         if(p.getMatrizGirasoles()[p.getPosY()][p.getPosX()]>=0) return null;
-        if(p.getEnergia()<1) return null;
+        if(p.getEnergia()<2) return null;
         p.setEnergia(p.getEnergia()-1);
+        p.percepcionFalsa();
         p.getMatrizGirasoles()[p.getPosY()][p.getPosX()]=0;
+        if(!p.isSimulacion()&&p.getZombiesVistos()==0)p.setExplorando(true);
+        p.setSimulacion(true);
         return p;
     }
 
@@ -42,7 +46,7 @@ public class PlantarGirasol extends SearchAction{
     @Override
     public String toString() {
         // TODO Auto-generated method stub
-        return null;
+        return "PlantarGirasol";
     }
 
 }

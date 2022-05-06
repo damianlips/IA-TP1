@@ -33,6 +33,7 @@ public class PlantEnvironment extends Environment {
 	@Override
 	public void updateState(AgentState ast,Action action) {
 		super.updateState(ast, action);
+		System.out.println(environmentState);
 		((PlantEnvironmentState)environmentState).update();
 	}
 	@Override

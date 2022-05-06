@@ -12,11 +12,16 @@ public class MatarZombieArriba extends SearchAction {
     @Override
     public SearchBasedAgentState execute(SearchBasedAgentState s) {
         PlantAgentState p = (PlantAgentState) s;
+        if(p.getEnergia()<=0) return null;
         if(p.getPosY()==4) return null;
         if(p.getMatrizZombies()[p.getPosY()+1][p.getPosX()]<=0) return null;
         p.setEnergia(p.getEnergia()-p.getMatrizZombies()[p.getPosY()+1][p.getPosX()]);
         p.getMatrizZombies()[p.getPosY()+1][p.getPosX()]=0;
         p.setZombiesRestantes(p.getZombiesRestantes()-1);
+        p.actualizarZombiesVistos();
+        p.percepcionFalsa();
+        if(!p.isSimulacion()&&p.getZombiesVistos()==0)p.setExplorando(true);
+        p.setSimulacion(true);
         return p;
     }
 
@@ -36,6 +41,7 @@ public class MatarZombieArriba extends SearchAction {
         p.setEnergia(p.getEnergia()-p.getMatrizZombies()[p.getPosY()+1][p.getPosX()]);
         p.getMatrizZombies()[p.getPosY()+1][p.getPosX()]=0;
         p.setZombiesRestantes(p.getZombiesRestantes()-1);
+        p.actualizarZombiesVistos();
         e.getMapa()[e.getAgentY()+1][e.getAgentX()]=0;
         e.setEnergiaAgente(p.getEnergia());
         return e;
@@ -44,7 +50,7 @@ public class MatarZombieArriba extends SearchAction {
     @Override
     public String toString() {
         // TODO Auto-generated method stub
-        return null;
+        return "MatarZombieArriba";
     }
 
 }

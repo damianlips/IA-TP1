@@ -20,7 +20,7 @@ public class PlantSearchMain {
                 new SearchBasedAgentSimulator(environment, agent);
         simulator.start();
 		
-      
+        
 
 	}
 

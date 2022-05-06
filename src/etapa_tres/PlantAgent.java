@@ -10,8 +10,11 @@ import frsf.cidisi.faia.agent.Perception;
 import frsf.cidisi.faia.agent.search.Problem;
 import frsf.cidisi.faia.agent.search.SearchAction;
 import frsf.cidisi.faia.agent.search.SearchBasedAgent;
+import frsf.cidisi.faia.solver.search.AStarSearch;
+import frsf.cidisi.faia.solver.search.BreathFirstSearch;
 import frsf.cidisi.faia.solver.search.DepthFirstSearch;
 import frsf.cidisi.faia.solver.search.Search;
+import frsf.cidisi.faia.solver.search.UniformCostSearch;
 
 public class PlantAgent extends SearchBasedAgent {
 
@@ -49,7 +52,7 @@ public class PlantAgent extends SearchBasedAgent {
 		operators.addElement(new MoverseIzquierda());
 		operators.addElement(new MoverseDerecha());
 		operators.addElement(new PlantarGirasol());
-		
+		operators.addElement(new MatarZombieEncima());
 		Problem problem = new Problem(goal, state, operators);
         this.setProblem(problem);
 	}
@@ -62,7 +65,7 @@ public class PlantAgent extends SearchBasedAgent {
 	@Override
 	public Action selectAction() {
 		// Create the search strategy
-        DepthFirstSearch strategy = new DepthFirstSearch();
+		UniformCostSearch strategy = new UniformCostSearch(new CostFunction());
 
         /**
          * Another search strategy examples:

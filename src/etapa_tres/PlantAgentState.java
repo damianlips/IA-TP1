@@ -17,14 +17,16 @@ public class PlantAgentState extends SearchBasedAgentState {
 	private Integer zombiesRestantes;
 	private Integer energiaGastada;
 	private Integer movimientos;
-	
+	private Integer zombiesVistos;
+	private Boolean simulacion= false;
+	private Boolean explorando= true;
 	public final static int DESCONOCIDO = -1; 
 	
 	
 
 	
 	public PlantAgentState(Integer energia, Integer posX, Integer posY, Integer[][] matrizZombies,
-			Integer[][] matrizGirasoles, Integer zombiesRestantes, Integer energiaGastada, Integer movimientos) {
+			Integer[][] matrizGirasoles, Integer zombiesRestantes, Integer energiaGastada, Integer movimientos, Integer zombiesVistos) {
 		super();
 		this.energia = energia;
 		this.posX = posX;
@@ -34,6 +36,7 @@ public class PlantAgentState extends SearchBasedAgentState {
 		this.zombiesRestantes = zombiesRestantes;
 		this.energiaGastada = energiaGastada;
 		this.movimientos = movimientos;
+		this.zombiesVistos= zombiesVistos;
 	}
 	
 	
@@ -75,7 +78,7 @@ public class PlantAgentState extends SearchBasedAgentState {
 			}
 		}
 		
-		return new PlantAgentState(energia, posX, posY, nuevaMatrizZombies, nuevaMatrizGirasoles, zombiesRestantes,energiaGastada, movimientos);
+		return new PlantAgentState(energia, posX, posY, nuevaMatrizZombies, nuevaMatrizGirasoles, zombiesRestantes,energiaGastada, movimientos, zombiesVistos);
 	}
 
 	@Override
@@ -92,6 +95,7 @@ public class PlantAgentState extends SearchBasedAgentState {
 			break;
 		case Sensor.ZOMBIE:
 			matrizZombies[posY][posX-per.izquierda.distancia]=per.izquierda.energia;
+			zombiesVistos++;
 		}
 		
 		//Derecha
@@ -105,6 +109,7 @@ public class PlantAgentState extends SearchBasedAgentState {
 			break;
 		case Sensor.ZOMBIE:
 			matrizZombies[posY][posX+per.derecha.distancia]=per.derecha.energia;
+			zombiesVistos++;
 		}
 		
 		
@@ -118,6 +123,7 @@ public class PlantAgentState extends SearchBasedAgentState {
 				break;
 			case Sensor.ZOMBIE:
 				matrizZombies[posY-per.arriba.distancia][posX]=per.arriba.energia;
+				zombiesVistos++;
 			}
 		}
 		
@@ -131,19 +137,41 @@ public class PlantAgentState extends SearchBasedAgentState {
 				break;
 			case Sensor.ZOMBIE:
 				matrizZombies[posY+per.abajo.distancia][posX]=per.abajo.energia;
+				zombiesVistos++;
 			}
 		}
-		
+		Boolean[] primerZombie= new Boolean[5];
+		for(int i=0;i<5;i++) primerZombie[i]=true;
+		for(int i=0;i<5;i++) {
+			for(int j=0;j<9;j++) {
+				if(i!=posY&&j!=posX) {
+					if(matrizZombies[i][j]==Sensor.VACIO) {
+					if(j==8) matrizZombies[i][j]=PlantAgentState.DESCONOCIDO;
+					else if(matrizZombies[i][j+1]==PlantAgentState.DESCONOCIDO||matrizZombies[i][j+1]>0) 
+						matrizZombies[i][j]=PlantAgentState.DESCONOCIDO; 
+					}
+					else if(j<7) 
+						if(j+1==posX&&(matrizZombies[i][j+2]==PlantAgentState.DESCONOCIDO||matrizZombies[i][j+2]>0)) {
+						matrizZombies[i][j]=PlantAgentState.DESCONOCIDO; 
+						}
+				}
+				if(!primerZombie[i])
+					matrizZombies[i][j]=PlantAgentState.DESCONOCIDO;
+				if(primerZombie[i]&&matrizZombies[i][j]>0)
+					primerZombie[i]=false;
+			}
+		}
 		
 	}
 
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub
-		
 		String[][] matriz = new String[5][9];
+		String string="Energia: " + this.energia+"\n"
+		+"Zombies restantes: "+this.getZombiesRestantes()+"\n"
+		+"Zombies vistos: "+this.getZombiesVistos()+"\n";
 		
-		System.out.println("Energia: " + this.energia);
 		
 		for(int i=0; i<5; i++) 	for(int j=0; j<9; j++) matriz[i][j] = "XX";
 		
@@ -163,13 +191,13 @@ public class PlantAgentState extends SearchBasedAgentState {
 		
 		for(int i=0; i<5; i++) {
 			for(int j=0; j<9; j++) {
-				System.out.print(matriz[i][j] + " ");
+				string+=matriz[i][j] + " ";
 			}
-			System.out.println();
+			string+="\n";
 		}
 		
 		
-		return null;
+		return string;
 	}
 	
 	
@@ -190,6 +218,7 @@ public class PlantAgentState extends SearchBasedAgentState {
 		zombiesRestantes= rand.nextInt(16)+5;
 		energiaGastada=0;
 		movimientos=0;
+		zombiesVistos=0;
 		
 		
 	}
@@ -274,7 +303,61 @@ public class PlantAgentState extends SearchBasedAgentState {
 		this.movimientos = movimientos;
 	}
 	
+	public void setZombiesVistos(Integer zombiesVistos) {
+		this.zombiesVistos=zombiesVistos;
+	}
 	
+	public Integer getZombiesVistos() {
+		return zombiesVistos;
+	}
 	
+	public Boolean matrizExplorada() {
+		for(int i=0;i<5;i++) {
+			for(int j=0;j<5;j++) {
+				if(matrizZombies[i][j]!=Sensor.VACIO) return false;
+			}
+		}
+		return true;
+	}
+	public void percepcionFalsa() {
+		for(int i =0;i<5;i++) {
+			for(int j=0;j<9;j++) {
+				if((i==posY||j==posX)&& matrizZombies[i][j]==PlantAgentState.DESCONOCIDO) matrizZombies[i][j]=Sensor.VACIO;
+				if(matrizGirasoles[i][j]>=0) matrizGirasoles[i][j]+=1;
+				if(matrizZombies[i][j]>0&&j>0) {
+					matrizZombies[i][j-1]=matrizZombies[i][j];
+					matrizZombies[i][j]=PlantAgentState.DESCONOCIDO;
+				}
+				}
+		}
+	}
+	public void actualizarZombiesVistos() {
+		int zombies=0;
+		for (int i=0;i<5;i++) {
+			for(int j=0;j<9;j++) {
+				if(matrizZombies[i][j]>0)zombies++;
+			}
+		}
+		zombiesVistos=zombies;
+	}
+	
+	public Boolean filaGirasoles() {
+		for(int i=0;i<5;i++) {
+			if(matrizGirasoles[i][0]<0) return false;
+		}
+		return true;
+	}
+	public Boolean isSimulacion() {
+		return simulacion;
+	}
+	public void setSimulacion(Boolean simulacion) {
+		this.simulacion= simulacion;
+	}
+	public void setExplorando(Boolean explorando) {
+		this.explorando=explorando;
+	}
+	public Boolean isExplorando() {
+		return explorando;
+	}
 
 }
