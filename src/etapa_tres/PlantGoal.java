@@ -11,7 +11,7 @@ public class PlantGoal extends GoalTest {
 		if(state.getEnergia()>0 && state.getZombiesRestantes()==0)
 			return true;
 		else {
-			if(state.getEnergia()>1 && !state.hayZombiesVistos() && state.exploreTodo()) return true;
+			if(!state.hayZombiesVistos() && state.exploreTodo() && state.getEnergia()>1) return true;
 			else return false;
 		}
 	}

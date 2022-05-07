@@ -1,6 +1,6 @@
 <tree id="3" edgedefault="directed">
 <node Id="0" Action="null" Cost="0.0" Estado_Agente="
-Energia: 18
+Energia: 4
 VV XX XX XX XX XX XX XX XX 
 VV XX XX XX XX XX XX XX XX 
 Pl VV VV VV VV VV VV VV VV 
@@ -9,7 +9,7 @@ VV VV VV VV VV VV VV VV VV
 Ultimo explorado: [ 10] [ 10] [ 0] [ 0] [ 1] 
 "/>
 <node Id="1" Action="Moverse abajo" Cost="0.0" Estado_Agente="
-Energia: 18
+Energia: 4
 VV XX XX XX XX XX XX XX XX 
 VV XX XX XX XX XX XX XX XX 
 VV VV VV VV VV VV VV VV VV 
@@ -18,7 +18,7 @@ Pl VV VV VV VV VV VV VV VV
 Ultimo explorado: [ 10] [ 10] [ 3] [ 0] [ 0] 
 "/>
 <node Id="2" Action="Moverse arriba" Cost="0.0" Estado_Agente="
-Energia: 18
+Energia: 4
 VV XX XX XX XX XX XX XX XX 
 VV XX XX XX XX XX XX XX XX 
 Pl VV VV VV VV VV VV VV VV 
@@ -27,7 +27,7 @@ VV VV VV VV VV VV VV VV VV
 Ultimo explorado: [ 10] [ 10] [ 0] [ 0] [ 1] 
 "/>
 <node Id="3" Action="Moverse derecha" Cost="0.0" Estado_Agente="
-Energia: 18
+Energia: 4
 VV XX XX XX XX XX XX XX XX 
 VV XX XX XX XX XX XX XX XX 
 VV VV VV VV VV VV VV VV VV 
@@ -36,7 +36,7 @@ VV VV VV VV VV VV VV VV VV
 Ultimo explorado: [ 10] [ 10] [ 3] [ 0] [ 1] 
 "/>
 <node Id="4" Action="Plantar girasol" Cost="0.0" Estado_Agente="
-Energia: 17
+Energia: 3
 VV XX XX XX XX XX XX XX XX 
 VV XX XX XX XX XX XX XX XX 
 VV VV VV VV VV VV VV VV VV 
@@ -45,7 +45,7 @@ VV VV VV VV VV VV VV VV VV
 Ultimo explorado: [ 10] [ 10] [ 3] [ 0] [ 1] 
 "/>
 <node Id="5" Action="Moverse arriba" Cost="0.0" Estado_Agente="
-Energia: 18
+Energia: 4
 VV XX XX XX XX XX XX XX XX 
 VV XX XX XX XX XX XX XX XX 
 VV VV VV VV VV VV VV VV VV 
@@ -54,7 +54,7 @@ VV VV VV VV VV VV VV VV VV
 Ultimo explorado: [ 10] [ 10] [ 3] [ 0] [ 0] 
 "/>
 <node Id="6" Action="Moverse derecha" Cost="0.0" Estado_Agente="
-Energia: 18
+Energia: 4
 VV XX XX XX XX XX XX XX XX 
 VV XX XX XX XX XX XX XX XX 
 VV VV VV VV VV VV VV VV VV 
@@ -63,7 +63,7 @@ VV Pl VV VV VV VV VV VV VV
 Ultimo explorado: [ 10] [ 10] [ 3] [ 0] [ 0] 
 "/>
 <node Id="7" Action="Plantar girasol" Cost="0.0" Estado_Agente="
-Energia: 17
+Energia: 3
 VV XX XX XX XX XX XX XX XX 
 VV XX XX XX XX XX XX XX XX 
 VV VV VV VV VV VV VV VV VV 
@@ -72,7 +72,7 @@ Pl VV VV VV VV VV VV VV VV
 Ultimo explorado: [ 10] [ 10] [ 3] [ 0] [ 0] 
 "/>
 <node Id="18" Action="Moverse arriba" Cost="0.0" Estado_Agente="
-Energia: 18
+Energia: 4
 VV XX XX XX XX XX XX XX XX 
 VV XX XX XX XX XX XX XX XX 
 Pl VV VV VV VV VV VV VV VV 
@@ -81,7 +81,7 @@ VV VV VV VV VV VV VV VV VV
 Ultimo explorado: [ 10] [ 10] [ 0] [ 0] [ 0] 
 "/>
 <node Id="19" Action="Moverse derecha" Cost="0.0" Estado_Agente="
-Energia: 18
+Energia: 4
 VV XX XX XX XX XX XX XX XX 
 VV XX XX XX XX XX XX XX XX 
 VV VV VV VV VV VV VV VV VV 
@@ -90,7 +90,7 @@ VV VV VV VV VV VV VV VV VV
 Ultimo explorado: [ 10] [ 10] [ 3] [ 0] [ 0] 
 "/>
 <node Id="20" Action="Plantar girasol" Cost="0.0" Estado_Agente="
-Energia: 17
+Energia: 3
 VV XX XX XX XX XX XX XX XX 
 VV XX XX XX XX XX XX XX XX 
 VV VV VV VV VV VV VV VV VV 
@@ -99,7 +99,7 @@ VV VV VV VV VV VV VV VV VV
 Ultimo explorado: [ 10] [ 10] [ 3] [ 0] [ 0] 
 "/>
 <node Id="59" Action="Moverse abajo" Cost="0.0" Estado_Agente="
-Energia: 18
+Energia: 4
 VV XX XX XX XX XX XX XX XX 
 VV XX XX XX XX XX XX XX XX 
 VV VV VV VV VV VV VV VV VV 
@@ -108,7 +108,7 @@ VV VV VV VV VV VV VV VV VV
 Ultimo explorado: [ 10] [ 10] [ 0] [ 0] [ 0] 
 "/>
 <node Id="60" Action="Moverse arriba" Cost="0.0" Estado_Agente="
-Energia: 18
+Energia: 4
 VV XX XX XX XX XX XX XX XX 
 Pl XX XX XX XX XX XX XX XX 
 VV VV VV VV VV VV VV VV VV 
@@ -117,7 +117,7 @@ VV VV VV VV VV VV VV VV VV
 Ultimo explorado: [ 10] [ 0] [ 0] [ 0] [ 0] 
 "/>
 <node Id="61" Action="Moverse derecha" Cost="0.0" Estado_Agente="
-Energia: 18
+Energia: 4
 VV XX XX XX XX XX XX XX XX 
 VV XX XX XX XX XX XX XX XX 
 VV Pl VV VV VV VV VV VV VV 
@@ -126,7 +126,7 @@ VV VV VV VV VV VV VV VV VV
 Ultimo explorado: [ 10] [ 10] [ 0] [ 0] [ 0] 
 "/>
 <node Id="62" Action="Plantar girasol" Cost="0.0" Estado_Agente="
-Energia: 17
+Energia: 3
 VV XX XX XX XX XX XX XX XX 
 VV XX XX XX XX XX XX XX XX 
 Pl VV VV VV VV VV VV VV VV 
@@ -135,7 +135,7 @@ VV VV VV VV VV VV VV VV VV
 Ultimo explorado: [ 10] [ 10] [ 0] [ 0] [ 0] 
 "/>
 <node Id="63" Action="Moverse abajo" Cost="0.0" Estado_Agente="
-Energia: 18
+Energia: 4
 VV XX XX XX XX XX XX XX XX 
 VV XX XX XX XX XX XX XX XX 
 VV VV VV VV VV VV VV VV VV 
@@ -144,7 +144,7 @@ VV Pl VV VV VV VV VV VV VV
 Ultimo explorado: [ 10] [ 10] [ 3] [ 0] [ 0] 
 "/>
 <node Id="64" Action="Moverse arriba" Cost="0.0" Estado_Agente="
-Energia: 18
+Energia: 4
 VV XX XX XX XX XX XX XX XX 
 VV XX XX XX XX XX XX XX XX 
 VV Pl VV VV VV VV VV VV VV 
@@ -153,7 +153,7 @@ VV VV VV VV VV VV VV VV VV
 Ultimo explorado: [ 10] [ 10] [ 0] [ 0] [ 0] 
 "/>
 <node Id="65" Action="Moverse derecha" Cost="0.0" Estado_Agente="
-Energia: 18
+Energia: 4
 VV XX XX XX XX XX XX XX XX 
 VV XX XX XX XX XX XX XX XX 
 VV VV VV VV VV VV VV VV VV 
@@ -162,7 +162,7 @@ VV VV VV VV VV VV VV VV VV
 Ultimo explorado: [ 10] [ 10] [ 3] [ 0] [ 0] 
 "/>
 <node Id="66" Action="Moverse abajo" Cost="0.0" Estado_Agente="
-Energia: 17
+Energia: 3
 VV XX XX XX XX XX XX XX XX 
 VV XX XX XX XX XX XX XX XX 
 VV VV VV VV VV VV VV VV VV 
@@ -171,7 +171,7 @@ Pl VV VV VV VV VV VV VV VV
 Ultimo explorado: [ 10] [ 10] [ 3] [ 0] [ 0] 
 "/>
 <node Id="67" Action="Moverse arriba" Cost="0.0" Estado_Agente="
-Energia: 17
+Energia: 3
 VV XX XX XX XX XX XX XX XX 
 VV XX XX XX XX XX XX XX XX 
 Pl VV VV VV VV VV VV VV VV 
@@ -180,7 +180,7 @@ VV VV VV VV VV VV VV VV VV
 Ultimo explorado: [ 10] [ 10] [ 0] [ 0] [ 0] 
 "/>
 <node Id="68" Action="Moverse derecha" Cost="0.0" Estado_Agente="
-Energia: 17
+Energia: 3
 VV XX XX XX XX XX XX XX XX 
 VV XX XX XX XX XX XX XX XX 
 VV VV VV VV VV VV VV VV VV 
@@ -189,7 +189,7 @@ VV VV VV VV VV VV VV VV VV
 Ultimo explorado: [ 10] [ 10] [ 3] [ 0] [ 0] 
 "/>
 <node Id="21" Action="Moverse arriba" Cost="0.0" Estado_Agente="
-Energia: 18
+Energia: 4
 VV XX XX XX XX XX XX XX XX 
 VV XX XX XX XX XX XX XX XX 
 VV VV VV VV VV VV VV VV VV 
@@ -198,7 +198,7 @@ VV VV VV VV VV VV VV VV VV
 Ultimo explorado: [ 10] [ 10] [ 3] [ 0] [ 0] 
 "/>
 <node Id="22" Action="Moverse derecha" Cost="0.0" Estado_Agente="
-Energia: 18
+Energia: 4
 VV XX XX XX XX XX XX XX XX 
 VV XX XX XX XX XX XX XX XX 
 VV VV VV VV VV VV VV VV VV 
@@ -207,7 +207,7 @@ VV VV Pl VV VV VV VV VV VV
 Ultimo explorado: [ 10] [ 10] [ 3] [ 0] [ 0] 
 "/>
 <node Id="69" Action="Moverse arriba" Cost="0.0" Estado_Agente="
-Energia: 18
+Energia: 4
 VV XX XX XX XX XX XX XX XX 
 VV XX XX XX XX XX XX XX XX 
 VV Pl VV VV VV VV VV VV VV 
@@ -216,7 +216,7 @@ VV VV VV VV VV VV VV VV VV
 Ultimo explorado: [ 10] [ 10] [ 0] [ 0] [ 0] 
 "/>
 <node Id="70" Action="Moverse izquierda" Cost="0.0" Estado_Agente="
-Energia: 18
+Energia: 4
 VV XX XX XX XX XX XX XX XX 
 VV XX XX XX XX XX XX XX XX 
 VV VV VV VV VV VV VV VV VV 
@@ -225,7 +225,7 @@ VV VV VV VV VV VV VV VV VV
 Ultimo explorado: [ 10] [ 10] [ 3] [ 0] [ 0] 
 "/>
 <node Id="71" Action="Moverse derecha" Cost="0.0" Estado_Agente="
-Energia: 18
+Energia: 4
 VV XX XX XX XX XX XX XX XX 
 VV XX XX XX XX XX XX XX XX 
 VV VV VV VV VV VV VV VV VV 
@@ -234,7 +234,7 @@ VV VV VV VV VV VV VV VV VV
 Ultimo explorado: [ 10] [ 10] [ 3] [ 0] [ 0] 
 "/>
 <node Id="72" Action="Moverse arriba" Cost="0.0" Estado_Agente="
-Energia: 18
+Energia: 4
 VV XX XX XX XX XX XX XX XX 
 VV XX XX XX XX XX XX XX XX 
 VV VV VV VV VV VV VV VV VV 
@@ -243,7 +243,7 @@ VV VV VV VV VV VV VV VV VV
 Ultimo explorado: [ 10] [ 10] [ 3] [ 0] [ 0] 
 "/>
 <node Id="73" Action="Moverse derecha" Cost="0.0" Estado_Agente="
-Energia: 18
+Energia: 4
 VV XX XX XX XX XX XX XX XX 
 VV XX XX XX XX XX XX XX XX 
 VV VV VV VV VV VV VV VV VV 
@@ -252,7 +252,7 @@ VV VV VV Pl VV VV VV VV VV
 Ultimo explorado: [ 10] [ 10] [ 3] [ 0] [ 0] 
 "/>
 <node Id="23" Action="Moverse arriba" Cost="0.0" Estado_Agente="
-Energia: 17
+Energia: 3
 VV XX XX XX XX XX XX XX XX 
 VV XX XX XX XX XX XX XX XX 
 VV VV VV VV VV VV VV VV VV 
@@ -261,7 +261,7 @@ G5 VV VV VV VV VV VV VV VV
 Ultimo explorado: [ 10] [ 10] [ 3] [ 0] [ 0] 
 "/>
 <node Id="24" Action="Moverse derecha" Cost="0.0" Estado_Agente="
-Energia: 17
+Energia: 3
 VV XX XX XX XX XX XX XX XX 
 VV XX XX XX XX XX XX XX XX 
 VV VV VV VV VV VV VV VV VV 
@@ -270,7 +270,7 @@ G5 Pl VV VV VV VV VV VV VV
 Ultimo explorado: [ 10] [ 10] [ 3] [ 0] [ 0] 
 "/>
 <node Id="74" Action="Moverse abajo" Cost="0.0" Estado_Agente="
-Energia: 22
+Energia: 8
 VV XX XX XX XX XX XX XX XX 
 VV XX XX XX XX XX XX XX XX 
 VV VV VV VV VV VV VV VV VV 
@@ -279,7 +279,7 @@ Pl VV VV VV VV VV VV VV VV
 Ultimo explorado: [ 10] [ 10] [ 3] [ 0] [ 0] 
 "/>
 <node Id="75" Action="Moverse arriba" Cost="0.0" Estado_Agente="
-Energia: 17
+Energia: 3
 VV XX XX XX XX XX XX XX XX 
 VV XX XX XX XX XX XX XX XX 
 Pl VV VV VV VV VV VV VV VV 
@@ -288,7 +288,7 @@ G5 VV VV VV VV VV VV VV VV
 Ultimo explorado: [ 10] [ 10] [ 0] [ 0] [ 0] 
 "/>
 <node Id="76" Action="Moverse derecha" Cost="0.0" Estado_Agente="
-Energia: 17
+Energia: 3
 VV XX XX XX XX XX XX XX XX 
 VV XX XX XX XX XX XX XX XX 
 VV VV VV VV VV VV VV VV VV 
@@ -297,7 +297,7 @@ G5 VV VV VV VV VV VV VV VV
 Ultimo explorado: [ 10] [ 10] [ 3] [ 0] [ 0] 
 "/>
 <node Id="77" Action="Plantar girasol" Cost="0.0" Estado_Agente="
-Energia: 16
+Energia: 2
 VV XX XX XX XX XX XX XX XX 
 VV XX XX XX XX XX XX XX XX 
 VV VV VV VV VV VV VV VV VV 
@@ -306,7 +306,7 @@ G5 VV VV VV VV VV VV VV VV
 Ultimo explorado: [ 10] [ 10] [ 3] [ 0] [ 0] 
 "/>
 <node Id="78" Action="Moverse arriba" Cost="0.0" Estado_Agente="
-Energia: 17
+Energia: 3
 VV XX XX XX XX XX XX XX XX 
 VV XX XX XX XX XX XX XX XX 
 VV VV VV VV VV VV VV VV VV 
@@ -315,7 +315,7 @@ G5 VV VV VV VV VV VV VV VV
 Ultimo explorado: [ 10] [ 10] [ 3] [ 0] [ 0] 
 "/>
 <node Id="79" Action="Moverse izquierda" Cost="0.0" Estado_Agente="
-Energia: 22
+Energia: 8
 VV XX XX XX XX XX XX XX XX 
 VV XX XX XX XX XX XX XX XX 
 VV VV VV VV VV VV VV VV VV 
@@ -324,7 +324,7 @@ Pl VV VV VV VV VV VV VV VV
 Ultimo explorado: [ 10] [ 10] [ 3] [ 0] [ 0] 
 "/>
 <node Id="80" Action="Moverse derecha" Cost="0.0" Estado_Agente="
-Energia: 17
+Energia: 3
 VV XX XX XX XX XX XX XX XX 
 VV XX XX XX XX XX XX XX XX 
 VV VV VV VV VV VV VV VV VV 
@@ -333,7 +333,7 @@ G5 VV Pl VV VV VV VV VV VV
 Ultimo explorado: [ 10] [ 10] [ 3] [ 0] [ 0] 
 "/>
 <node Id="8" Action="Moverse abajo" Cost="0.0" Estado_Agente="
-Energia: 18
+Energia: 4
 VV XX XX XX XX XX XX XX XX 
 VV XX XX XX XX XX XX XX XX 
 VV VV VV VV VV VV VV VV VV 
@@ -342,7 +342,7 @@ VV VV VV VV VV VV VV VV VV
 Ultimo explorado: [ 10] [ 10] [ 0] [ 0] [ 1] 
 "/>
 <node Id="9" Action="Moverse arriba" Cost="0.0" Estado_Agente="
-Energia: 18
+Energia: 4
 VV XX XX XX XX XX XX XX XX 
 Pl XX XX XX XX XX XX XX XX 
 VV VV VV VV VV VV VV VV VV 
@@ -351,7 +351,7 @@ VV VV VV VV VV VV VV VV VV
 Ultimo explorado: [ 10] [ 0] [ 0] [ 0] [ 1] 
 "/>
 <node Id="10" Action="Moverse derecha" Cost="0.0" Estado_Agente="
-Energia: 18
+Energia: 4
 VV XX XX XX XX XX XX XX XX 
 VV XX XX XX XX XX XX XX XX 
 VV Pl VV VV VV VV VV VV VV 
@@ -360,7 +360,7 @@ VV VV VV VV VV VV VV VV VV
 Ultimo explorado: [ 10] [ 10] [ 0] [ 0] [ 1] 
 "/>
 <node Id="11" Action="Plantar girasol" Cost="0.0" Estado_Agente="
-Energia: 17
+Energia: 3
 VV XX XX XX XX XX XX XX XX 
 VV XX XX XX XX XX XX XX XX 
 Pl VV VV VV VV VV VV VV VV 
@@ -369,7 +369,7 @@ VV VV VV VV VV VV VV VV VV
 Ultimo explorado: [ 10] [ 10] [ 0] [ 0] [ 1] 
 "/>
 <node Id="25" Action="Moverse abajo" Cost="0.0" Estado_Agente="
-Energia: 18
+Energia: 4
 VV XX XX XX XX XX XX XX XX 
 VV XX XX XX XX XX XX XX XX 
 VV VV VV VV VV VV VV VV VV 
@@ -378,7 +378,7 @@ Pl VV VV VV VV VV VV VV VV
 Ultimo explorado: [ 10] [ 10] [ 0] [ 0] [ 0] 
 "/>
 <node Id="26" Action="Moverse derecha" Cost="0.0" Estado_Agente="
-Energia: 18
+Energia: 4
 VV XX XX XX XX XX XX XX XX 
 VV XX XX XX XX XX XX XX XX 
 VV VV VV VV VV VV VV VV VV 
@@ -387,7 +387,7 @@ VV VV VV VV VV VV VV VV VV
 Ultimo explorado: [ 10] [ 10] [ 0] [ 0] [ 1] 
 "/>
 <node Id="27" Action="Plantar girasol" Cost="0.0" Estado_Agente="
-Energia: 17
+Energia: 3
 VV XX XX XX XX XX XX XX XX 
 VV XX XX XX XX XX XX XX XX 
 VV VV VV VV VV VV VV VV VV 
@@ -396,7 +396,7 @@ VV VV VV VV VV VV VV VV VV
 Ultimo explorado: [ 10] [ 10] [ 0] [ 0] [ 1] 
 "/>
 <node Id="81" Action="Moverse arriba" Cost="0.0" Estado_Agente="
-Energia: 18
+Energia: 4
 VV XX XX XX XX XX XX XX XX 
 VV XX XX XX XX XX XX XX XX 
 VV VV VV VV VV VV VV VV VV 
@@ -405,7 +405,7 @@ VV VV VV VV VV VV VV VV VV
 Ultimo explorado: [ 10] [ 10] [ 0] [ 0] [ 0] 
 "/>
 <node Id="82" Action="Moverse derecha" Cost="0.0" Estado_Agente="
-Energia: 18
+Energia: 4
 VV XX XX XX XX XX XX XX XX 
 VV XX XX XX XX XX XX XX XX 
 VV VV VV VV VV VV VV VV VV 
@@ -414,7 +414,7 @@ VV Pl VV VV VV VV VV VV VV
 Ultimo explorado: [ 10] [ 10] [ 0] [ 0] [ 0] 
 "/>
 <node Id="83" Action="Plantar girasol" Cost="0.0" Estado_Agente="
-Energia: 17
+Energia: 3
 VV XX XX XX XX XX XX XX XX 
 VV XX XX XX XX XX XX XX XX 
 VV VV VV VV VV VV VV VV VV 
@@ -423,7 +423,7 @@ Pl VV VV VV VV VV VV VV VV
 Ultimo explorado: [ 10] [ 10] [ 0] [ 0] [ 0] 
 "/>
 <node Id="84" Action="Moverse abajo" Cost="0.0" Estado_Agente="
-Energia: 18
+Energia: 4
 VV XX XX XX XX XX XX XX XX 
 VV XX XX XX XX XX XX XX XX 
 VV VV VV VV VV VV VV VV VV 
@@ -432,7 +432,7 @@ VV Pl VV VV VV VV VV VV VV
 Ultimo explorado: [ 10] [ 10] [ 0] [ 0] [ 0] 
 "/>
 <node Id="85" Action="Moverse arriba" Cost="0.0" Estado_Agente="
-Energia: 18
+Energia: 4
 VV XX XX XX XX XX XX XX XX 
 VV XX XX XX XX XX XX XX XX 
 VV Pl VV VV VV VV VV VV VV 
@@ -441,7 +441,7 @@ VV VV VV VV VV VV VV VV VV
 Ultimo explorado: [ 10] [ 10] [ 0] [ 0] [ 1] 
 "/>
 <node Id="86" Action="Moverse derecha" Cost="0.0" Estado_Agente="
-Energia: 18
+Energia: 4
 VV XX XX XX XX XX XX XX XX 
 VV XX XX XX XX XX XX XX XX 
 VV VV VV VV VV VV VV VV VV 
@@ -450,7 +450,7 @@ VV VV VV VV VV VV VV VV VV
 Ultimo explorado: [ 10] [ 10] [ 0] [ 0] [ 1] 
 "/>
 <node Id="87" Action="Moverse abajo" Cost="0.0" Estado_Agente="
-Energia: 17
+Energia: 3
 VV XX XX XX XX XX XX XX XX 
 VV XX XX XX XX XX XX XX XX 
 VV VV VV VV VV VV VV VV VV 
@@ -459,7 +459,7 @@ Pl VV VV VV VV VV VV VV VV
 Ultimo explorado: [ 10] [ 10] [ 0] [ 0] [ 0] 
 "/>
 <node Id="88" Action="Moverse arriba" Cost="0.0" Estado_Agente="
-Energia: 17
+Energia: 3
 VV XX XX XX XX XX XX XX XX 
 VV XX XX XX XX XX XX XX XX 
 Pl VV VV VV VV VV VV VV VV 
@@ -468,7 +468,7 @@ VV VV VV VV VV VV VV VV VV
 Ultimo explorado: [ 10] [ 10] [ 0] [ 0] [ 1] 
 "/>
 <node Id="89" Action="Moverse derecha" Cost="0.0" Estado_Agente="
-Energia: 17
+Energia: 3
 VV XX XX XX XX XX XX XX XX 
 VV XX XX XX XX XX XX XX XX 
 VV VV VV VV VV VV VV VV VV 
@@ -477,7 +477,7 @@ VV VV VV VV VV VV VV VV VV
 Ultimo explorado: [ 10] [ 10] [ 0] [ 0] [ 1] 
 "/>
 <node Id="28" Action="Moverse abajo" Cost="0.0" Estado_Agente="
-Energia: 18
+Energia: 4
 VV XX XX XX XX XX XX XX XX 
 VV XX XX XX XX XX XX XX XX 
 Pl VV VV VV VV VV VV VV VV 
@@ -486,7 +486,7 @@ VV VV VV VV VV VV VV VV VV
 Ultimo explorado: [ 10] [ 0] [ 0] [ 0] [ 1] 
 "/>
 <node Id="29" Action="Moverse arriba" Cost="0.0" Estado_Agente="
-Energia: 18
+Energia: 4
 Pl XX XX XX XX XX XX XX XX 
 VV XX XX XX XX XX XX XX XX 
 VV VV VV VV VV VV VV VV VV 
@@ -495,7 +495,7 @@ VV VV VV VV VV VV VV VV VV
 Ultimo explorado: [ 0] [ 0] [ 0] [ 0] [ 1] 
 "/>
 <node Id="30" Action="Moverse derecha" Cost="0.0" Estado_Agente="
-Energia: 18
+Energia: 4
 VV XX XX XX XX XX XX XX XX 
 VV Pl XX XX XX XX XX XX XX 
 VV VV VV VV VV VV VV VV VV 
@@ -504,7 +504,7 @@ VV VV VV VV VV VV VV VV VV
 Ultimo explorado: [ 10] [ 0] [ 0] [ 0] [ 1] 
 "/>
 <node Id="31" Action="Plantar girasol" Cost="0.0" Estado_Agente="
-Energia: 17
+Energia: 3
 VV XX XX XX XX XX XX XX XX 
 Pl XX XX XX XX XX XX XX XX 
 VV VV VV VV VV VV VV VV VV 
@@ -513,7 +513,7 @@ VV VV VV VV VV VV VV VV VV
 Ultimo explorado: [ 10] [ 0] [ 0] [ 0] [ 1] 
 "/>
 <node Id="90" Action="Moverse abajo" Cost="0.0" Estado_Agente="
-Energia: 18
+Energia: 4
 VV XX XX XX XX XX XX XX XX 
 VV XX XX XX XX XX XX XX XX 
 VV VV VV VV VV VV VV VV VV 
@@ -522,7 +522,7 @@ VV VV VV VV VV VV VV VV VV
 Ultimo explorado: [ 10] [ 0] [ 0] [ 0] [ 1] 
 "/>
 <node Id="91" Action="Moverse derecha" Cost="0.0" Estado_Agente="
-Energia: 18
+Energia: 4
 VV XX XX XX XX XX XX XX XX 
 VV XX XX XX XX XX XX XX XX 
 VV Pl VV VV VV VV VV VV VV 
@@ -531,7 +531,7 @@ VV VV VV VV VV VV VV VV VV
 Ultimo explorado: [ 10] [ 0] [ 0] [ 0] [ 1] 
 "/>
 <node Id="92" Action="Plantar girasol" Cost="0.0" Estado_Agente="
-Energia: 17
+Energia: 3
 VV XX XX XX XX XX XX XX XX 
 VV XX XX XX XX XX XX XX XX 
 Pl VV VV VV VV VV VV VV VV 
@@ -540,7 +540,7 @@ VV VV VV VV VV VV VV VV VV
 Ultimo explorado: [ 10] [ 0] [ 0] [ 0] [ 1] 
 "/>
 <node Id="32" Action="Moverse abajo" Cost="0.0" Estado_Agente="
-Energia: 18
+Energia: 4
 VV XX XX XX XX XX XX XX XX 
 VV XX XX XX XX XX XX XX XX 
 VV VV VV VV VV VV VV VV VV 
@@ -549,7 +549,7 @@ VV VV VV VV VV VV VV VV VV
 Ultimo explorado: [ 10] [ 10] [ 0] [ 0] [ 1] 
 "/>
 <node Id="33" Action="Moverse arriba" Cost="0.0" Estado_Agente="
-Energia: 18
+Energia: 4
 VV XX XX XX XX XX XX XX XX 
 VV Pl XX XX XX XX XX XX XX 
 VV VV VV VV VV VV VV VV VV 
@@ -558,7 +558,7 @@ VV VV VV VV VV VV VV VV VV
 Ultimo explorado: [ 10] [ 0] [ 0] [ 0] [ 1] 
 "/>
 <node Id="34" Action="Moverse derecha" Cost="0.0" Estado_Agente="
-Energia: 18
+Energia: 4
 VV XX XX XX XX XX XX XX XX 
 VV XX XX XX XX XX XX XX XX 
 VV VV Pl VV VV VV VV VV VV 
@@ -567,7 +567,7 @@ VV VV VV VV VV VV VV VV VV
 Ultimo explorado: [ 10] [ 10] [ 0] [ 0] [ 1] 
 "/>
 <node Id="35" Action="Moverse abajo" Cost="0.0" Estado_Agente="
-Energia: 17
+Energia: 3
 VV XX XX XX XX XX XX XX XX 
 VV XX XX XX XX XX XX XX XX 
 G5 VV VV VV VV VV VV VV VV 
@@ -576,7 +576,7 @@ VV VV VV VV VV VV VV VV VV
 Ultimo explorado: [ 10] [ 10] [ 0] [ 0] [ 1] 
 "/>
 <node Id="36" Action="Moverse arriba" Cost="0.0" Estado_Agente="
-Energia: 17
+Energia: 3
 VV XX XX XX XX XX XX XX XX 
 Pl XX XX XX XX XX XX XX XX 
 G5 VV VV VV VV VV VV VV VV 
@@ -585,7 +585,7 @@ VV VV VV VV VV VV VV VV VV
 Ultimo explorado: [ 10] [ 0] [ 0] [ 0] [ 1] 
 "/>
 <node Id="37" Action="Moverse derecha" Cost="0.0" Estado_Agente="
-Energia: 17
+Energia: 3
 VV XX XX XX XX XX XX XX XX 
 VV XX XX XX XX XX XX XX XX 
 G5 Pl VV VV VV VV VV VV VV 
@@ -594,7 +594,7 @@ VV VV VV VV VV VV VV VV VV
 Ultimo explorado: [ 10] [ 10] [ 0] [ 0] [ 1] 
 "/>
 <node Id="12" Action="Moverse abajo" Cost="0.0" Estado_Agente="
-Energia: 18
+Energia: 4
 VV XX XX XX XX XX XX XX XX 
 VV XX XX XX XX XX XX XX XX 
 VV VV VV VV VV VV VV VV VV 
@@ -603,7 +603,7 @@ VV Pl VV VV VV VV VV VV VV
 Ultimo explorado: [ 10] [ 10] [ 3] [ 0] [ 0] 
 "/>
 <node Id="13" Action="Moverse arriba" Cost="0.0" Estado_Agente="
-Energia: 18
+Energia: 4
 VV XX XX XX XX XX XX XX XX 
 VV XX XX XX XX XX XX XX XX 
 VV Pl VV VV VV VV VV VV VV 
@@ -612,7 +612,7 @@ VV VV VV VV VV VV VV VV VV
 Ultimo explorado: [ 10] [ 10] [ 0] [ 0] [ 1] 
 "/>
 <node Id="14" Action="Moverse derecha" Cost="0.0" Estado_Agente="
-Energia: 18
+Energia: 4
 VV XX XX XX XX XX XX XX XX 
 VV XX XX XX XX XX XX XX XX 
 VV VV VV VV VV VV VV VV VV 
@@ -621,7 +621,7 @@ VV VV VV VV VV VV VV VV VV
 Ultimo explorado: [ 10] [ 10] [ 3] [ 0] [ 1] 
 "/>
 <node Id="38" Action="Moverse arriba" Cost="0.0" Estado_Agente="
-Energia: 18
+Energia: 4
 VV XX XX XX XX XX XX XX XX 
 VV XX XX XX XX XX XX XX XX 
 VV VV VV VV VV VV VV VV VV 
@@ -630,7 +630,7 @@ VV VV VV VV VV VV VV VV VV
 Ultimo explorado: [ 10] [ 10] [ 3] [ 0] [ 0] 
 "/>
 <node Id="39" Action="Moverse izquierda" Cost="0.0" Estado_Agente="
-Energia: 18
+Energia: 4
 VV XX XX XX XX XX XX XX XX 
 VV XX XX XX XX XX XX XX XX 
 VV VV VV VV VV VV VV VV VV 
@@ -639,7 +639,7 @@ Pl VV VV VV VV VV VV VV VV
 Ultimo explorado: [ 10] [ 10] [ 3] [ 0] [ 0] 
 "/>
 <node Id="40" Action="Moverse derecha" Cost="0.0" Estado_Agente="
-Energia: 18
+Energia: 4
 VV XX XX XX XX XX XX XX XX 
 VV XX XX XX XX XX XX XX XX 
 VV VV VV VV VV VV VV VV VV 
@@ -648,7 +648,7 @@ VV VV Pl VV VV VV VV VV VV
 Ultimo explorado: [ 10] [ 10] [ 3] [ 0] [ 0] 
 "/>
 <node Id="41" Action="Moverse abajo" Cost="0.0" Estado_Agente="
-Energia: 18
+Energia: 4
 VV XX XX XX XX XX XX XX XX 
 VV XX XX XX XX XX XX XX XX 
 VV VV VV VV VV VV VV VV VV 
@@ -657,7 +657,7 @@ VV VV VV VV VV VV VV VV VV
 Ultimo explorado: [ 10] [ 10] [ 0] [ 0] [ 1] 
 "/>
 <node Id="42" Action="Moverse arriba" Cost="0.0" Estado_Agente="
-Energia: 18
+Energia: 4
 VV XX XX XX XX XX XX XX XX 
 VV Pl XX XX XX XX XX XX XX 
 VV VV VV VV VV VV VV VV VV 
@@ -666,7 +666,7 @@ VV VV VV VV VV VV VV VV VV
 Ultimo explorado: [ 10] [ 0] [ 0] [ 0] [ 1] 
 "/>
 <node Id="43" Action="Moverse izquierda" Cost="0.0" Estado_Agente="
-Energia: 18
+Energia: 4
 VV XX XX XX XX XX XX XX XX 
 VV XX XX XX XX XX XX XX XX 
 Pl VV VV VV VV VV VV VV VV 
@@ -675,7 +675,7 @@ VV VV VV VV VV VV VV VV VV
 Ultimo explorado: [ 10] [ 10] [ 0] [ 0] [ 1] 
 "/>
 <node Id="44" Action="Moverse derecha" Cost="0.0" Estado_Agente="
-Energia: 18
+Energia: 4
 VV XX XX XX XX XX XX XX XX 
 VV XX XX XX XX XX XX XX XX 
 VV VV Pl VV VV VV VV VV VV 
@@ -684,7 +684,7 @@ VV VV VV VV VV VV VV VV VV
 Ultimo explorado: [ 10] [ 10] [ 0] [ 0] [ 1] 
 "/>
 <node Id="45" Action="Moverse abajo" Cost="0.0" Estado_Agente="
-Energia: 18
+Energia: 4
 VV XX XX XX XX XX XX XX XX 
 VV XX XX XX XX XX XX XX XX 
 VV VV VV VV VV VV VV VV VV 
@@ -693,7 +693,7 @@ VV VV Pl VV VV VV VV VV VV
 Ultimo explorado: [ 10] [ 10] [ 3] [ 0] [ 0] 
 "/>
 <node Id="46" Action="Moverse arriba" Cost="0.0" Estado_Agente="
-Energia: 18
+Energia: 4
 VV XX XX XX XX XX XX XX XX 
 VV XX XX XX XX XX XX XX XX 
 VV VV Pl VV VV VV VV VV VV 
@@ -702,7 +702,7 @@ VV VV VV VV VV VV VV VV VV
 Ultimo explorado: [ 10] [ 10] [ 0] [ 0] [ 1] 
 "/>
 <node Id="47" Action="Moverse derecha" Cost="0.0" Estado_Agente="
-Energia: 18
+Energia: 4
 VV XX XX XX XX XX XX XX XX 
 VV XX XX XX XX XX XX XX XX 
 VV VV VV VV VV VV VV VV VV 
@@ -711,7 +711,7 @@ VV VV VV VV VV VV VV VV VV
 Ultimo explorado: [ 10] [ 10] [ 3] [ 0] [ 1] 
 "/>
 <node Id="15" Action="Moverse abajo" Cost="0.0" Estado_Agente="
-Energia: 17
+Energia: 3
 VV XX XX XX XX XX XX XX XX 
 VV XX XX XX XX XX XX XX XX 
 VV VV VV VV VV VV VV VV VV 
@@ -720,7 +720,7 @@ Pl VV VV VV VV VV VV VV VV
 Ultimo explorado: [ 10] [ 10] [ 3] [ 0] [ 0] 
 "/>
 <node Id="16" Action="Moverse arriba" Cost="0.0" Estado_Agente="
-Energia: 17
+Energia: 3
 VV XX XX XX XX XX XX XX XX 
 VV XX XX XX XX XX XX XX XX 
 Pl VV VV VV VV VV VV VV VV 
@@ -729,7 +729,7 @@ VV VV VV VV VV VV VV VV VV
 Ultimo explorado: [ 10] [ 10] [ 0] [ 0] [ 1] 
 "/>
 <node Id="17" Action="Moverse derecha" Cost="0.0" Estado_Agente="
-Energia: 17
+Energia: 3
 VV XX XX XX XX XX XX XX XX 
 VV XX XX XX XX XX XX XX XX 
 VV VV VV VV VV VV VV VV VV 
@@ -738,7 +738,7 @@ VV VV VV VV VV VV VV VV VV
 Ultimo explorado: [ 10] [ 10] [ 3] [ 0] [ 1] 
 "/>
 <node Id="48" Action="Moverse arriba" Cost="0.0" Estado_Agente="
-Energia: 22
+Energia: 8
 VV XX XX XX XX XX XX XX XX 
 VV XX XX XX XX XX XX XX XX 
 VV VV VV VV VV VV VV VV VV 
@@ -747,7 +747,7 @@ VV VV VV VV VV VV VV VV VV
 Ultimo explorado: [ 10] [ 10] [ 3] [ 0] [ 0] 
 "/>
 <node Id="49" Action="Moverse derecha" Cost="0.0" Estado_Agente="
-Energia: 17
+Energia: 3
 VV XX XX XX XX XX XX XX XX 
 VV XX XX XX XX XX XX XX XX 
 VV VV VV VV VV VV VV VV VV 
@@ -756,7 +756,7 @@ VV Pl VV VV VV VV VV VV VV
 Ultimo explorado: [ 10] [ 10] [ 3] [ 0] [ 0] 
 "/>
 <node Id="50" Action="Plantar girasol" Cost="0.0" Estado_Agente="
-Energia: 16
+Energia: 2
 VV XX XX XX XX XX XX XX XX 
 VV XX XX XX XX XX XX XX XX 
 VV VV VV VV VV VV VV VV VV 
@@ -765,7 +765,7 @@ Pl VV VV VV VV VV VV VV VV
 Ultimo explorado: [ 10] [ 10] [ 3] [ 0] [ 0] 
 "/>
 <node Id="51" Action="Moverse abajo" Cost="0.0" Estado_Agente="
-Energia: 22
+Energia: 8
 VV XX XX XX XX XX XX XX XX 
 VV XX XX XX XX XX XX XX XX 
 VV VV VV VV VV VV VV VV VV 
@@ -774,7 +774,7 @@ VV VV VV VV VV VV VV VV VV
 Ultimo explorado: [ 10] [ 10] [ 0] [ 0] [ 1] 
 "/>
 <node Id="52" Action="Moverse arriba" Cost="0.0" Estado_Agente="
-Energia: 17
+Energia: 3
 VV XX XX XX XX XX XX XX XX 
 Pl XX XX XX XX XX XX XX XX 
 VV VV VV VV VV VV VV VV VV 
@@ -783,7 +783,7 @@ VV VV VV VV VV VV VV VV VV
 Ultimo explorado: [ 10] [ 0] [ 0] [ 0] [ 1] 
 "/>
 <node Id="53" Action="Moverse derecha" Cost="0.0" Estado_Agente="
-Energia: 17
+Energia: 3
 VV XX XX XX XX XX XX XX XX 
 VV XX XX XX XX XX XX XX XX 
 VV Pl VV VV VV VV VV VV VV 
@@ -792,7 +792,7 @@ VV VV VV VV VV VV VV VV VV
 Ultimo explorado: [ 10] [ 10] [ 0] [ 0] [ 1] 
 "/>
 <node Id="54" Action="Plantar girasol" Cost="0.0" Estado_Agente="
-Energia: 16
+Energia: 2
 VV XX XX XX XX XX XX XX XX 
 VV XX XX XX XX XX XX XX XX 
 Pl VV VV VV VV VV VV VV VV 
@@ -801,7 +801,7 @@ VV VV VV VV VV VV VV VV VV
 Ultimo explorado: [ 10] [ 10] [ 0] [ 0] [ 1] 
 "/>
 <node Id="55" Action="Moverse abajo" Cost="0.0" Estado_Agente="
-Energia: 17
+Energia: 3
 VV XX XX XX XX XX XX XX XX 
 VV XX XX XX XX XX XX XX XX 
 VV VV VV VV VV VV VV VV VV 
@@ -810,7 +810,7 @@ VV Pl VV VV VV VV VV VV VV
 Ultimo explorado: [ 10] [ 10] [ 3] [ 0] [ 0] 
 "/>
 <node Id="56" Action="Moverse arriba" Cost="0.0" Estado_Agente="
-Energia: 17
+Energia: 3
 VV XX XX XX XX XX XX XX XX 
 VV XX XX XX XX XX XX XX XX 
 VV Pl VV VV VV VV VV VV VV 
@@ -819,7 +819,7 @@ VV VV VV VV VV VV VV VV VV
 Ultimo explorado: [ 10] [ 10] [ 0] [ 0] [ 1] 
 "/>
 <node Id="57" Action="Moverse izquierda" Cost="0.0" Estado_Agente="
-Energia: 22
+Energia: 8
 VV XX XX XX XX XX XX XX XX 
 VV XX XX XX XX XX XX XX XX 
 VV VV VV VV VV VV VV VV VV 
@@ -828,7 +828,7 @@ VV VV VV VV VV VV VV VV VV
 Ultimo explorado: [ 10] [ 10] [ 3] [ 0] [ 1] 
 "/>
 <node Id="58" Action="Moverse derecha" Cost="0.0" Estado_Agente="
-Energia: 17
+Energia: 3
 VV XX XX XX XX XX XX XX XX 
 VV XX XX XX XX XX XX XX XX 
 VV VV VV VV VV VV VV VV VV 
