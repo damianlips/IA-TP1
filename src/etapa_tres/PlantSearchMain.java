@@ -16,8 +16,8 @@ public class PlantSearchMain {
 		PlantEnvironmentState state = (PlantEnvironmentState)environment.getEnvironmentState();
 		state.setEnergiaAgente(((PlantAgentState)agent.getAgentState()).getEnergia());
 		state.setCantZombies(((PlantAgentState)agent.getAgentState()).getZombiesRestantes());
-		SearchBasedAgentSimulator simulator =
-                new SearchBasedAgentSimulator(environment, agent);
+		PlantSimulator simulator =
+                new PlantSimulator(environment, agent);
         simulator.start();
 		
       

@@ -12,6 +12,7 @@ public class MatarZombieDerecha extends SearchAction {
     @Override
     public SearchBasedAgentState execute(SearchBasedAgentState s) {
         PlantAgentState p = (PlantAgentState) s;
+        if(p.getMatrizZombies()[p.getPosY()][p.getPosX()]>0) return null;
         if(p.getPosX()==8) return null;
         if(p.getMatrizZombies()[p.getPosY()][p.getPosX()+1]<=0) return null;
         p.setEnergia(p.getEnergia()-p.getMatrizZombies()[p.getPosY()][p.getPosX()+1]);
@@ -31,12 +32,13 @@ public class MatarZombieDerecha extends SearchAction {
         // TODO Auto-generated method stub
         PlantAgentState p = (PlantAgentState) ast;
         PlantEnvironmentState e = (PlantEnvironmentState) est;
-        if(p.getPosY()==0) return null;
+        if(p.getMatrizZombies()[p.getPosY()][p.getPosX()]>0) return null;
+        if(p.getPosX()==8) return null;
         if(p.getMatrizZombies()[p.getPosY()][p.getPosX()+1]<=0) return null;
         p.setEnergia(p.getEnergia()-p.getMatrizZombies()[p.getPosY()][p.getPosX()+1]);
         p.getMatrizZombies()[p.getPosY()][p.getPosX()+1]=0;
         p.setZombiesRestantes(p.getZombiesRestantes()-1);
-        e.getMapa()[e.getAgentY()+1][e.getAgentX()]=0;
+        e.getMapa()[e.getAgentY()][e.getAgentX()+1]=0;
         e.setEnergiaAgente(p.getEnergia());
         return e;
     }
@@ -44,7 +46,7 @@ public class MatarZombieDerecha extends SearchAction {
     @Override
     public String toString() {
         // TODO Auto-generated method stub
-        return null;
+        return "Matar zombie a la derecha";
     }
 
 }

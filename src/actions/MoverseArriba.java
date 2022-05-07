@@ -12,26 +12,38 @@ public class MoverseArriba extends SearchAction{
     @Override
     public SearchBasedAgentState execute(SearchBasedAgentState s) {
         PlantAgentState p= (PlantAgentState) s;
+        if(p.getMatrizZombies()[p.getPosY()][p.getPosX()]>0) return null;
         if(p.getPosY()==0) return null;
         p.setPosY(p.getPosY()-1);
-        if(p.getMatrizZombies()[p.getPosY()][p.getPosX()]>0) p.setEnergia(p.getEnergia()-p.getMatrizZombies()[p.getPosY()][p.getPosX()]*2);
+        if(p.getMatrizZombies()[p.getPosY()][p.getPosX()]>0) {
+        	p.setEnergia(p.getEnergia()-p.getMatrizZombies()[p.getPosY()][p.getPosX()]*2);
+        	p.getMatrizZombies()[p.getPosY()][p.getPosX()] = 0;
+        	p.setZombiesRestantes(p.getZombiesRestantes()-1);
+        }
         else 
             if(p.getMatrizGirasoles()[p.getPosY()][p.getPosX()]>0) p.setEnergia(p.getEnergia()+p.getMatrizGirasoles()[p.getPosY()][p.getPosX()]);
+        //p.setCero();
         return p;
     }
 
     @Override
     public Double getCost() {
-        return 1d;
+        return 0d;
     }
 
     @Override
     public EnvironmentState execute(AgentState ast, EnvironmentState est) {
         PlantAgentState p= (PlantAgentState) ast;
         PlantEnvironmentState e = (PlantEnvironmentState) est;
+        if(p.getMatrizZombies()[p.getPosY()][p.getPosX()]>0) return null;
         if(p.getPosY()==0) return null;
         p.setPosY(p.getPosY()-1);
-        if(p.getMatrizZombies()[p.getPosY()][p.getPosX()]>0) p.setEnergia(p.getEnergia()-p.getMatrizZombies()[p.getPosY()][p.getPosX()]*2);
+        if(p.getMatrizZombies()[p.getPosY()][p.getPosX()]>0) {
+        	p.setEnergia(p.getEnergia()-p.getMatrizZombies()[p.getPosY()][p.getPosX()]*2);
+        	p.getMatrizZombies()[p.getPosY()][p.getPosX()]=0;
+        	e.getMapa()[p.getPosY()][p.getPosX()]=0;
+        	e.setCantZombies(e.getCantZombies()-1);
+        }
         else 
             if(p.getMatrizGirasoles()[p.getPosY()][p.getPosX()]>0) p.setEnergia(p.getEnergia()+p.getMatrizGirasoles()[p.getPosY()][p.getPosX()]);
         e.setAgentY(e.getAgentY()-1);
@@ -42,7 +54,7 @@ public class MoverseArriba extends SearchAction{
     @Override
     public String toString() {
         // TODO Auto-generated method stub
-        return null;
+        return "Moverse arriba";
     }
 
 }

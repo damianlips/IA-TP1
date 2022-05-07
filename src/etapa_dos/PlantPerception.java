@@ -7,6 +7,7 @@ import frsf.cidisi.faia.environment.Environment;
 public class PlantPerception extends Perception {
 	
 	public Sensor arriba,abajo,izquierda,derecha;
+	public int zombie;
 	
 	
 	@Override
@@ -21,7 +22,9 @@ public class PlantPerception extends Perception {
 		this.abajo=envState.getAbajo(x, y);
 		this.izquierda=envState.getIzquierda(x, y);
 		this.derecha=envState.getDerecha(x, y);
-		
+		if(envState.getMapa()[y][x] instanceof Zombie)
+			zombie = ((Zombie)envState.getMapa()[y][x]).getTipoZombie();
+		else zombie=0;
 		
 
 	}
@@ -30,8 +33,10 @@ public class PlantPerception extends Perception {
 	@Override
 	public String toString() {
 		return "PlantPerception [arriba=" + arriba + ", abajo=" + abajo + ", izquierda=" + izquierda + ", derecha="
-				+ derecha + "]";
+				+ derecha + ", zombie=" + zombie + "]";
 	}
+
+
 	
 	
 

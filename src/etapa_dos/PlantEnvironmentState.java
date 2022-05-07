@@ -83,7 +83,11 @@ public class PlantEnvironmentState extends EnvironmentState {
 		// TODO Auto-generated method stub
 		
 		String[][] matriz = new String[5][9];
-		
+
+		StringBuilder str = new StringBuilder();
+		str.append(System.getProperty("line.separator"));
+		str.append("Zombies restantes: "+cantZombies);
+		str.append(System.getProperty("line.separator"));
 		for(int i=0; i<5; i++) 	for(int j=0; j<9; j++) matriz[i][j] = "VV";
 		
 		for(int i=0; i<5; i++) {
@@ -100,12 +104,14 @@ public class PlantEnvironmentState extends EnvironmentState {
 		
 		for(int i=0; i<5; i++) {
 			for(int j=0; j<9; j++) {
-				System.out.print(matriz[i][j] + " ");
+				//System.out.print(matriz[i][j] + " ");
+				str.append(matriz[i][j] + " ");
 			}
-			System.out.println();
+			//System.out.println();
+			str.append(System.getProperty("line.separator"));
 		}
 		
-		return null;
+		return str.toString();
 	}
 	public Boolean getLlegoZombie() {
 		return llegoZombie;

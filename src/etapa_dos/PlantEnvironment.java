@@ -18,7 +18,6 @@ public class PlantEnvironment extends Environment {
 		PlantPerception perception = new PlantPerception();
 		int x = ((PlantEnvironmentState)environmentState).getAgentX();
 		int y = ((PlantEnvironmentState)environmentState).getAgentY();
-		
 		perception.arriba=this.getArriba(x, y);
 		perception.abajo=this.getAbajo(x, y);
 		perception.izquierda=this.getIzquierda(x, y);

@@ -10,7 +10,11 @@ public class PlantGoal extends GoalTest {
 		PlantAgentState state = (PlantAgentState)agentState;
 		if(state.getEnergia()>0 && state.getZombiesRestantes()==0)
 			return true;
-		else return false;
+		else {
+			if(state.getEnergia()>1 && !state.hayZombiesVistos() && state.exploreTodo()) return true;
+			else return false;
+		}
 	}
 
 }
+

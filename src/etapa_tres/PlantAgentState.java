@@ -17,6 +17,7 @@ public class PlantAgentState extends SearchBasedAgentState {
 	private Integer zombiesRestantes;
 	private Integer energiaGastada;
 	private Integer movimientos;
+	private Integer[] ultimoExplorado;
 	
 	public final static int DESCONOCIDO = -1; 
 	
@@ -24,7 +25,7 @@ public class PlantAgentState extends SearchBasedAgentState {
 
 	
 	public PlantAgentState(Integer energia, Integer posX, Integer posY, Integer[][] matrizZombies,
-			Integer[][] matrizGirasoles, Integer zombiesRestantes, Integer energiaGastada, Integer movimientos) {
+			Integer[][] matrizGirasoles, Integer zombiesRestantes, Integer energiaGastada, Integer movimientos, Integer[] ultimoExplorado) {
 		super();
 		this.energia = energia;
 		this.posX = posX;
@@ -34,6 +35,7 @@ public class PlantAgentState extends SearchBasedAgentState {
 		this.zombiesRestantes = zombiesRestantes;
 		this.energiaGastada = energiaGastada;
 		this.movimientos = movimientos;
+		this.ultimoExplorado = ultimoExplorado;
 	}
 	
 	
@@ -54,6 +56,7 @@ public class PlantAgentState extends SearchBasedAgentState {
 		if(otro.getZombiesRestantes()!=this.zombiesRestantes) return false;
 		
 		for(int i = 0; i<5 ; ++i) {
+			if(this.ultimoExplorado[i]!= otro.getUltimoExplorado()[i]) return false;
 			for(int j= 0 ; j<9 ; ++j) {
 				if(this.matrizGirasoles[i][j] != otro.getMatrizGirasoles()[i][j]) return false;
 				if(this.matrizZombies[i][j] != otro.getMatrizZombies()[i][j]) return false;
@@ -68,20 +71,32 @@ public class PlantAgentState extends SearchBasedAgentState {
 	public SearchBasedAgentState clone() {
 		Integer[][] nuevaMatrizZombies = new Integer[5][9];
 		Integer[][] nuevaMatrizGirasoles = new Integer[5][9];
+		Integer[] nuevoUltimoExplorado = new Integer[5];
 		for(int i = 0; i<5 ; ++i) {
+			nuevoUltimoExplorado[i]=this.ultimoExplorado[i];
 			for(int j= 0 ; j<9 ; ++j) {
 				nuevaMatrizGirasoles[i][j] = this.matrizGirasoles[i][j];
 				nuevaMatrizZombies[i][j] = this.matrizZombies[i][j];
 			}
-		}
-		
-		return new PlantAgentState(energia, posX, posY, nuevaMatrizZombies, nuevaMatrizGirasoles, zombiesRestantes,energiaGastada, movimientos);
+		}		
+		return new PlantAgentState(energia, posX, posY, nuevaMatrizZombies, nuevaMatrizGirasoles, zombiesRestantes,energiaGastada, movimientos,nuevoUltimoExplorado);
 	}
 
 	@Override
 	public void updateState(Perception p) {
+		for(int i = 0; i<5 ; ++i) {
+			if(i!=this.getPosY())
+				++ultimoExplorado[i];
+		}	
+		
 		PlantPerception per = (PlantPerception) p;
-		//Primero sensor a la izquierda
+		//Sensor donde estoy parado
+		if(per.zombie>0) {
+			matrizZombies[posY][posX]= per.zombie;
+			matrizGirasoles[posY][posX] = -1;				
+		}
+		
+		//Sensor a la izquierda
 		for(int i=1 ; i<=per.izquierda.distancia ; ++i ) {
 			matrizZombies[posY][posX-i] = 0;
 			matrizGirasoles[posY][posX-i] = -1;						
@@ -142,9 +157,11 @@ public class PlantAgentState extends SearchBasedAgentState {
 		// TODO Auto-generated method stub
 		
 		String[][] matriz = new String[5][9];
-		
-		System.out.println("Energia: " + this.energia);
-		
+		StringBuilder str = new StringBuilder();
+		//System.out.println("Energia: " + this.energia);
+		str.append(System.getProperty("line.separator"));
+		str.append("Energia: " + this.energia);
+		str.append(System.getProperty("line.separator"));
 		for(int i=0; i<5; i++) 	for(int j=0; j<9; j++) matriz[i][j] = "XX";
 		
 		for(int i=0; i<5; i++) {
@@ -163,13 +180,19 @@ public class PlantAgentState extends SearchBasedAgentState {
 		
 		for(int i=0; i<5; i++) {
 			for(int j=0; j<9; j++) {
-				System.out.print(matriz[i][j] + " ");
+				//System.out.print(matriz[i][j] + " ");
+				str.append(matriz[i][j] + " ");
 			}
-			System.out.println();
+			//System.out.println();
+			str.append(System.getProperty("line.separator"));
 		}
+		str.append("Ultimo explorado: ");
+		for(int i=0; i<5; i++) {
+			str.append("[ " + ultimoExplorado[i] + "] ");
+		}
+		str.append(System.getProperty("line.separator"));
 		
-		
-		return null;
+		return str.toString();
 	}
 	
 	
@@ -177,12 +200,15 @@ public class PlantAgentState extends SearchBasedAgentState {
 	public void initState() {
 		matrizZombies = new Integer[5][9];
 		matrizGirasoles = new Integer[5][9];
-		for(int i=0; i<5; i++) {
+		ultimoExplorado = new Integer[5];
+		for(int i = 0; i<5 ; ++i) {
+			ultimoExplorado[i]=6;
 			for(int j=0; j<9; j++) {
 				matrizZombies[i][j]= DESCONOCIDO;
 				matrizGirasoles[i][j] = DESCONOCIDO;
 			}
 		}
+		ultimoExplorado[2]=0;
 		Random rand = new Random();
 		energia=rand.nextInt(19)+2; //Genero random entre 0 y (19-1) y sumo 2 para tener entre 2 y 20
 		posX=0;
@@ -193,7 +219,25 @@ public class PlantAgentState extends SearchBasedAgentState {
 		
 		
 	}
+	public boolean exploreTodo() {
+		for(int i=0; i<5; i++) {
+			if(ultimoExplorado[i]>3) return false;
+		}
+		return true;
+	}
+	
+	public boolean hayZombiesVistos() {
+		for(int i=0; i<5; i++) {
+			for(int j=0; j<9; j++) {
+				if (matrizZombies[i][j]>0) return true;
+			}
+		}
+		return false;
+	}
 
+	public void setCero() {
+		ultimoExplorado[posY]=0;
+	}
 
 	public Integer getEnergia() {
 		return energia;
@@ -222,6 +266,7 @@ public class PlantAgentState extends SearchBasedAgentState {
 
 	public void setPosY(Integer posY) {
 		this.posY = posY;
+		this.setCero();
 	}
 
 
@@ -272,6 +317,16 @@ public class PlantAgentState extends SearchBasedAgentState {
 
 	public void setMovimientos(Integer movimientos) {
 		this.movimientos = movimientos;
+	}
+
+
+	public Integer[] getUltimoExplorado() {
+		return ultimoExplorado;
+	}
+
+
+	public void setUltimoExplorado(Integer[] ultimoExplorado) {
+		this.ultimoExplorado = ultimoExplorado;
 	}
 	
 	

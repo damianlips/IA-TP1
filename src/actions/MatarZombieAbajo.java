@@ -12,10 +12,11 @@ public class MatarZombieAbajo extends SearchAction {
     @Override
     public SearchBasedAgentState execute(SearchBasedAgentState s) {
         PlantAgentState p = (PlantAgentState) s;
-        if(p.getPosY()==0) return null;
-        if(p.getMatrizZombies()[p.getPosY()-1][p.getPosX()]<=0) return null;
-        p.setEnergia(p.getEnergia()-p.getMatrizZombies()[p.getPosY()-1][p.getPosX()]);
-        p.getMatrizZombies()[p.getPosY()-1][p.getPosX()]=0;
+        if(p.getMatrizZombies()[p.getPosY()][p.getPosX()]>0) return null;
+        if(p.getPosY()==4) return null;
+        if(p.getMatrizZombies()[p.getPosY()+1][p.getPosX()]<=0) return null;
+        p.setEnergia(p.getEnergia()-p.getMatrizZombies()[p.getPosY()+1][p.getPosX()]);
+        p.getMatrizZombies()[p.getPosY()+1][p.getPosX()]=0;
         p.setZombiesRestantes(p.getZombiesRestantes()-1);
         return p;
     }
@@ -31,12 +32,13 @@ public class MatarZombieAbajo extends SearchAction {
         // TODO Auto-generated method stub
         PlantAgentState p = (PlantAgentState) ast;
         PlantEnvironmentState e = (PlantEnvironmentState) est;
-        if(p.getPosY()==0) return null;
-        if(p.getMatrizZombies()[p.getPosY()-1][p.getPosX()]<=0) return null;
-        p.setEnergia(p.getEnergia()-p.getMatrizZombies()[p.getPosY()-1][p.getPosX()]);
-        p.getMatrizZombies()[p.getPosY()-1][p.getPosX()]=0;
+        if(p.getMatrizZombies()[p.getPosY()][p.getPosX()]>0) return null;
+        if(p.getPosY()==4) return null;
+        if(p.getMatrizZombies()[p.getPosY()+1][p.getPosX()]<=0) return null;
+        p.setEnergia(p.getEnergia()-p.getMatrizZombies()[p.getPosY()+1][p.getPosX()]);
+        p.getMatrizZombies()[p.getPosY()+1][p.getPosX()]=0;
         p.setZombiesRestantes(p.getZombiesRestantes()-1);
-        e.getMapa()[e.getAgentY()-1][e.getAgentX()]=0;
+        e.getMapa()[e.getAgentY()+1][e.getAgentX()]=0;
         e.setEnergiaAgente(p.getEnergia());
         return e;
     }
@@ -44,7 +46,7 @@ public class MatarZombieAbajo extends SearchAction {
     @Override
     public String toString() {
         // TODO Auto-generated method stub
-        return null;
+        return "Matar zombie abajo";
     }
 
 }
