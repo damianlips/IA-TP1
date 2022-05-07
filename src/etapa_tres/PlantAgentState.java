@@ -219,6 +219,20 @@ public class PlantAgentState extends SearchBasedAgentState {
 		
 		
 	}
+	
+	public void percepcionFalsa() {
+		for(int i =0;i<5;i++) {
+			for(int j=0;j<9;j++) {
+				if((i==posY||j==posX)&& matrizZombies[i][j]==PlantAgentState.DESCONOCIDO) matrizZombies[i][j]=Sensor.VACIO;
+				if(matrizGirasoles[i][j]>=0) matrizGirasoles[i][j]+=1;
+				if(matrizZombies[i][j]>0&&j>0) {
+					matrizZombies[i][j-1]=matrizZombies[i][j];
+					matrizZombies[i][j]=PlantAgentState.DESCONOCIDO;
+				}
+				}
+		}
+	}
+	
 	public boolean exploreTodo() {
 		for(int i=0; i<5; i++) {
 			if(ultimoExplorado[i]>3) return false;

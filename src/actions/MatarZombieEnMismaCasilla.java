@@ -16,6 +16,7 @@ public class MatarZombieEnMismaCasilla extends SearchAction {
         p.setEnergia(p.getEnergia()-(p.getMatrizZombies()[p.getPosY()][p.getPosX()]*2));
         p.getMatrizZombies()[p.getPosY()][p.getPosX()]=0;
         p.setZombiesRestantes(p.getZombiesRestantes()-1);
+        p.percepcionFalsa();
         return p;
 	}
 

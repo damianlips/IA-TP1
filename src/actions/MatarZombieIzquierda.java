@@ -18,6 +18,7 @@ public class MatarZombieIzquierda extends SearchAction {
         p.setEnergia(p.getEnergia()-p.getMatrizZombies()[p.getPosY()][p.getPosX()-1]);
         p.getMatrizZombies()[p.getPosY()][p.getPosX()-1]=0;
         p.setZombiesRestantes(p.getZombiesRestantes()-1);
+        p.percepcionFalsa();
         return p;
     }
 

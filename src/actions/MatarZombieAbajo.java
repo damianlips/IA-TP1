@@ -18,6 +18,7 @@ public class MatarZombieAbajo extends SearchAction {
         p.setEnergia(p.getEnergia()-p.getMatrizZombies()[p.getPosY()+1][p.getPosX()]);
         p.getMatrizZombies()[p.getPosY()+1][p.getPosX()]=0;
         p.setZombiesRestantes(p.getZombiesRestantes()-1);
+        p.percepcionFalsa();
         return p;
     }
 

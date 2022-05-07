@@ -48,7 +48,7 @@ Ultimo explorado: [ 2] [ 1] [ 0] [ 5] [ 6]
 Energia: 14
 VV VV VV VV VV VV VV VV VV 
 VV VV VV VV VV VV VV VV VV 
-G5 VV VV VV VV VV VV VV VV 
+G2 VV VV VV VV VV VV VV VV 
 Pl VV VV VV VV VV VV VV VV 
 VV VV VV VV VV VV VV VV VV 
 Ultimo explorado: [ 2] [ 1] [ 0] [ 0] [ 6] 
@@ -57,7 +57,7 @@ Ultimo explorado: [ 2] [ 1] [ 0] [ 0] [ 6]
 Energia: 14
 VV VV VV VV VV VV VV VV VV 
 Pl VV VV VV VV VV VV VV VV 
-G5 VV VV VV VV VV VV VV VV 
+G2 VV VV VV VV VV VV VV VV 
 VV VV VV VV VV VV VV VV VV 
 VV VV VV VV VV VV VV VV VV 
 Ultimo explorado: [ 2] [ 0] [ 0] [ 5] [ 6] 
@@ -66,7 +66,7 @@ Ultimo explorado: [ 2] [ 0] [ 0] [ 5] [ 6]
 Energia: 14
 VV VV VV VV VV VV VV VV VV 
 VV VV VV VV VV VV VV VV VV 
-G5 Pl VV VV VV VV VV VV VV 
+G2 Pl VV VV VV VV VV VV VV 
 VV VV VV VV VV VV VV VV VV 
 VV VV VV VV VV VV VV VV VV 
 Ultimo explorado: [ 2] [ 1] [ 0] [ 5] [ 6] 
@@ -75,7 +75,7 @@ Ultimo explorado: [ 2] [ 1] [ 0] [ 5] [ 6]
 Energia: 13
 VV VV VV VV VV VV VV VV VV 
 VV VV VV VV VV VV VV VV VV 
-G5 VV VV VV VV VV VV VV VV 
+G3 VV VV VV VV VV VV VV VV 
 Pl VV VV VV VV VV VV VV VV 
 VV VV VV VV VV VV VV VV VV 
 Ultimo explorado: [ 2] [ 1] [ 0] [ 0] [ 6] 
@@ -84,13 +84,13 @@ Ultimo explorado: [ 2] [ 1] [ 0] [ 0] [ 6]
 Energia: 14
 VV VV VV VV VV VV VV VV VV 
 VV VV VV VV VV VV VV VV VV 
-G5 VV VV VV VV VV VV VV VV 
+G3 VV VV VV VV VV VV VV VV 
 VV VV VV VV VV VV VV VV VV 
 Pl VV VV VV VV VV VV VV VV 
 Ultimo explorado: [ 2] [ 1] [ 0] [ 0] [ 0] 
 "/>
 <node Id="21" Action="Moverse arriba" Cost="0.0" Estado_Agente="
-Energia: 19
+Energia: 16
 VV VV VV VV VV VV VV VV VV 
 VV VV VV VV VV VV VV VV VV 
 Pl VV VV VV VV VV VV VV VV 
@@ -102,7 +102,7 @@ Ultimo explorado: [ 2] [ 1] [ 0] [ 0] [ 6]
 Energia: 14
 VV VV VV VV VV VV VV VV VV 
 VV VV VV VV VV VV VV VV VV 
-G5 VV VV VV VV VV VV VV VV 
+G3 VV VV VV VV VV VV VV VV 
 VV Pl VV VV VV VV VV VV VV 
 VV VV VV VV VV VV VV VV VV 
 Ultimo explorado: [ 2] [ 1] [ 0] [ 0] [ 6] 
@@ -111,13 +111,13 @@ Ultimo explorado: [ 2] [ 1] [ 0] [ 0] [ 6]
 Energia: 13
 VV VV VV VV VV VV VV VV VV 
 Pl VV VV VV VV VV VV VV VV 
-G5 VV VV VV VV VV VV VV VV 
+G3 VV VV VV VV VV VV VV VV 
 VV VV VV VV VV VV VV VV VV 
 VV VV VV VV VV VV VV VV VV 
 Ultimo explorado: [ 2] [ 0] [ 0] [ 5] [ 6] 
 "/>
 <node Id="24" Action="Moverse abajo" Cost="0.0" Estado_Agente="
-Energia: 19
+Energia: 16
 VV VV VV VV VV VV VV VV VV 
 VV VV VV VV VV VV VV VV VV 
 Pl VV VV VV VV VV VV VV VV 
@@ -129,7 +129,7 @@ Ultimo explorado: [ 2] [ 0] [ 0] [ 5] [ 6]
 Energia: 14
 Pl VV VV VV VV VV VV VV VV 
 VV VV VV VV VV VV VV VV VV 
-G5 VV VV VV VV VV VV VV VV 
+G3 VV VV VV VV VV VV VV VV 
 VV VV VV VV VV VV VV VV VV 
 VV VV VV VV VV VV VV VV VV 
 Ultimo explorado: [ 0] [ 0] [ 0] [ 5] [ 6] 
@@ -138,7 +138,7 @@ Ultimo explorado: [ 0] [ 0] [ 0] [ 5] [ 6]
 Energia: 14
 VV VV VV VV VV VV VV VV VV 
 VV Pl VV VV VV VV VV VV VV 
-G5 VV VV VV VV VV VV VV VV 
+G3 VV VV VV VV VV VV VV VV 
 VV VV VV VV VV VV VV VV VV 
 VV VV VV VV VV VV VV VV VV 
 Ultimo explorado: [ 2] [ 0] [ 0] [ 5] [ 6] 
@@ -147,7 +147,7 @@ Ultimo explorado: [ 2] [ 0] [ 0] [ 5] [ 6]
 Energia: 14
 VV VV VV VV VV VV VV VV VV 
 VV VV VV VV VV VV VV VV VV 
-G5 VV VV VV VV VV VV VV VV 
+G3 VV VV VV VV VV VV VV VV 
 VV Pl VV VV VV VV VV VV VV 
 VV VV VV VV VV VV VV VV VV 
 Ultimo explorado: [ 2] [ 1] [ 0] [ 0] [ 6] 
@@ -156,13 +156,13 @@ Ultimo explorado: [ 2] [ 1] [ 0] [ 0] [ 6]
 Energia: 14
 VV VV VV VV VV VV VV VV VV 
 VV Pl VV VV VV VV VV VV VV 
-G5 VV VV VV VV VV VV VV VV 
+G3 VV VV VV VV VV VV VV VV 
 VV VV VV VV VV VV VV VV VV 
 VV VV VV VV VV VV VV VV VV 
 Ultimo explorado: [ 2] [ 0] [ 0] [ 5] [ 6] 
 "/>
 <node Id="29" Action="Moverse izquierda" Cost="0.0" Estado_Agente="
-Energia: 19
+Energia: 16
 VV VV VV VV VV VV VV VV VV 
 VV VV VV VV VV VV VV VV VV 
 Pl VV VV VV VV VV VV VV VV 
@@ -174,7 +174,7 @@ Ultimo explorado: [ 2] [ 1] [ 0] [ 5] [ 6]
 Energia: 14
 VV VV VV VV VV VV VV VV VV 
 VV VV VV VV VV VV VV VV VV 
-G5 VV Pl VV VV VV VV VV VV 
+G3 VV Pl VV VV VV VV VV VV 
 VV VV VV VV VV VV VV VV VV 
 VV VV VV VV VV VV VV VV VV 
 Ultimo explorado: [ 2] [ 1] [ 0] [ 5] [ 6] 
@@ -220,7 +220,7 @@ Energia: 14
 VV VV VV VV VV VV VV VV VV 
 VV VV VV VV VV VV VV VV VV 
 VV VV VV VV VV VV VV VV VV 
-G5 VV VV VV VV VV VV VV VV 
+G2 VV VV VV VV VV VV VV VV 
 Pl VV VV VV VV VV VV VV VV 
 Ultimo explorado: [ 2] [ 1] [ 0] [ 0] [ 0] 
 "/>
@@ -229,7 +229,7 @@ Energia: 14
 VV VV VV VV VV VV VV VV VV 
 VV VV VV VV VV VV VV VV VV 
 Pl VV VV VV VV VV VV VV VV 
-G5 VV VV VV VV VV VV VV VV 
+G2 VV VV VV VV VV VV VV VV 
 VV VV VV VV VV VV VV VV VV 
 Ultimo explorado: [ 2] [ 1] [ 0] [ 0] [ 6] 
 "/>
@@ -238,7 +238,7 @@ Energia: 14
 VV VV VV VV VV VV VV VV VV 
 VV VV VV VV VV VV VV VV VV 
 VV VV VV VV VV VV VV VV VV 
-G5 Pl VV VV VV VV VV VV VV 
+G2 Pl VV VV VV VV VV VV VV 
 VV VV VV VV VV VV VV VV VV 
 Ultimo explorado: [ 2] [ 1] [ 0] [ 0] [ 6] 
 "/>

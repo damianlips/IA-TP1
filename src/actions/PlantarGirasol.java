@@ -18,8 +18,9 @@ public class PlantarGirasol extends SearchAction{
         if(p.getMatrizGirasoles()[p.getPosY()][p.getPosX()]>=0) return null;
         if(p.getEnergia()<1) return null;
         p.setEnergia(p.getEnergia()-1);
-        //p.getMatrizGirasoles()[p.getPosY()][p.getPosX()]=0;
-        p.getMatrizGirasoles()[p.getPosY()][p.getPosX()]=5;
+        p.getMatrizGirasoles()[p.getPosY()][p.getPosX()]=0;
+        //p.getMatrizGirasoles()[p.getPosY()][p.getPosX()]=5;
+        p.percepcionFalsa();
         return p;
     }
 

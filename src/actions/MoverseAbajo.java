@@ -22,6 +22,8 @@ public class MoverseAbajo extends SearchAction{
         }
         else if(p.getMatrizGirasoles()[p.getPosY()][p.getPosX()]>0) p.setEnergia(p.getEnergia()+p.getMatrizGirasoles()[p.getPosY()][p.getPosX()]);
         //p.setCero();
+        p.percepcionFalsa();
+        System.out.println("hola");
         return p;
     }
 

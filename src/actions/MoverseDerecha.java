@@ -21,6 +21,7 @@ public class MoverseDerecha extends SearchAction{
         	p.setZombiesRestantes(p.getZombiesRestantes()-1);
         }
         else if(p.getMatrizGirasoles()[p.getPosY()][p.getPosX()]>0) p.setEnergia(p.getEnergia()+p.getMatrizGirasoles()[p.getPosY()][p.getPosX()]);
+        p.percepcionFalsa();
         return p;
     }
 
