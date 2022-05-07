@@ -22,6 +22,10 @@ public class PlantEnvironment extends Environment {
 		perception.abajo=this.getAbajo(x, y);
 		perception.izquierda=this.getIzquierda(x, y);
 		perception.derecha=this.getDerecha(x, y);
+		if(((PlantEnvironmentState)environmentState).getMapa()[y][x] instanceof Zombie)
+			perception.zombie = ((Zombie)((PlantEnvironmentState)environmentState).getMapa()[y][x]).getTipoZombie();
+		else perception.zombie=0;
+		
 		return perception;
 	}
 

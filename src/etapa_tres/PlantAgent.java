@@ -24,6 +24,7 @@ public class PlantAgent extends SearchBasedAgent {
 		state.initState();
 		this.setAgentState(state);
 		Vector<SearchAction> operators = new Vector<SearchAction>();
+		operators.addElement(new PlantarGirasol());
 		operators.addElement(new MatarZombieEnMismaCasilla());
 		operators.addElement(new MatarZombieAbajo());
 		operators.addElement(new MatarZombieArriba());
@@ -33,7 +34,6 @@ public class PlantAgent extends SearchBasedAgent {
 		operators.addElement(new MoverseArriba());
 		operators.addElement(new MoverseIzquierda());
 		operators.addElement(new MoverseDerecha());
-		operators.addElement(new PlantarGirasol());
 		
 		Problem problem = new Problem(goal, state, operators);
         this.setProblem(problem);
