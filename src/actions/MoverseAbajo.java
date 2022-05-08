@@ -49,7 +49,7 @@ public class MoverseAbajo extends SearchAction{
         	p.getMatrizZombies()[p.getPosY()][p.getPosX()]=0;
         	p.setZombiesRestantes(p.getZombiesRestantes()-1);
         	e.getMapa()[p.getPosY()][p.getPosX()]=0;
-        	e.setCantZombies(e.getCantZombies()-1);
+        	//e.setCantZombies(e.getCantZombies()-1);
         }
         else if(p.getMatrizGirasoles()[p.getPosY()][p.getPosX()]>0) {
         	p.setEnergia(p.getEnergia()+p.getMatrizGirasoles()[p.getPosY()][p.getPosX()]);
