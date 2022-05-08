@@ -13,6 +13,7 @@ public class PlantarGirasol extends SearchAction{
     @Override
     public SearchBasedAgentState execute(SearchBasedAgentState s) {
         PlantAgentState p = (PlantAgentState) s;
+        if(p.getPerdi()) return null;
         if(p.getEnergia()<=0) return null;
         if(p.getMatrizZombies()[p.getPosY()][p.getPosX()]>0) return null;
         if(p.getPosX()>0) return null;
@@ -34,6 +35,7 @@ public class PlantarGirasol extends SearchAction{
     @Override
     public EnvironmentState execute(AgentState ast, EnvironmentState est) {
         PlantAgentState p = (PlantAgentState) ast;
+        if(p.getPerdi()) return null;
         if(p.getEnergia()<=0) return null;
         PlantEnvironmentState e = (PlantEnvironmentState) est;
         if(p.getMatrizZombies()[p.getPosY()][p.getPosX()]>0) return null;

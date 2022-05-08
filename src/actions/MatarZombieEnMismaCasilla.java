@@ -13,6 +13,7 @@ public class MatarZombieEnMismaCasilla extends SearchAction {
 	public SearchBasedAgentState execute(SearchBasedAgentState s) {
 		PlantAgentState p = (PlantAgentState) s;
 		if(p.getEnergia()<=0) return null;
+        if(p.getPerdi()) return null;
         if(p.getMatrizZombies()[p.getPosY()][p.getPosX()]<=0) return null;
         p.setEnergia(p.getEnergia()-(p.getMatrizZombies()[p.getPosY()][p.getPosX()]*2));
         p.getMatrizZombies()[p.getPosY()][p.getPosX()]=0;
@@ -31,6 +32,7 @@ public class MatarZombieEnMismaCasilla extends SearchAction {
 	public EnvironmentState execute(AgentState ast, EnvironmentState est) {
 		PlantAgentState p = (PlantAgentState) ast;
 		if(p.getEnergia()<=0) return null;
+        if(p.getPerdi()) return null;
         PlantEnvironmentState e = (PlantEnvironmentState) est;
         if(p.getMatrizZombies()[p.getPosY()][p.getPosX()]<=0) return null;
         p.setEnergia(p.getEnergia()-(p.getMatrizZombies()[p.getPosY()][p.getPosX()]*2));

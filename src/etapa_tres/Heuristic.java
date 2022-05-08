@@ -9,6 +9,7 @@ public class Heuristic implements IEstimatedCostFunction {
 	public double getEstimatedCost(NTree node) {
 		PlantAgentState state = ((PlantAgentState) node.getAgentState());
 		Integer[][] zombies = state.getMatrizZombies();
+		Integer cant=0;
 		Double costo=0d;
 		/*
 		 * for(int i=0; i<5; i++) {
@@ -20,11 +21,12 @@ public class Heuristic implements IEstimatedCostFunction {
 			for(int j=0; j<9; j++) {
 				if(zombies[i][j]>0) {
 					costo+= Math.pow(2,j+1);
+					++cant;
 				}
 			}
 		}
 		
-		return costo*state.getZombiesRestantes();
+		return costo+state.getZombiesRestantes()-cant;
 	}
 
 }

@@ -66,10 +66,12 @@ public class PlantAgent extends SearchBasedAgent {
 	public Action selectAction() {
 		// Create the search strategy
         //DepthFirstSearch strategy = new DepthFirstSearch();
+		/*
 		CostFunction cost = new CostFunction();
         Heuristic heuristic = new Heuristic();
         AStarSearch strategy = new AStarSearch(cost, heuristic);
-
+	*/
+		BreathFirstSearch strategy = new BreathFirstSearch();
         /**
          * Another search strategy examples:
          * 

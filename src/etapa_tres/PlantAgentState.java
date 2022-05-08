@@ -18,6 +18,8 @@ public class PlantAgentState extends SearchBasedAgentState {
 	private Integer energiaGastada;
 	private Integer movimientos;
 	private Integer[] ultimoExplorado;
+	private Boolean perdi;
+	private Boolean avanzan;
 	
 	public final static int DESCONOCIDO = -1; 
 	
@@ -25,7 +27,7 @@ public class PlantAgentState extends SearchBasedAgentState {
 
 	
 	public PlantAgentState(Integer energia, Integer posX, Integer posY, Integer[][] matrizZombies,
-			Integer[][] matrizGirasoles, Integer zombiesRestantes, Integer energiaGastada, Integer movimientos, Integer[] ultimoExplorado) {
+			Integer[][] matrizGirasoles, Integer zombiesRestantes, Integer energiaGastada, Integer movimientos, Integer[] ultimoExplorado, Boolean perdi, Boolean avanzan) {
 		super();
 		this.energia = energia;
 		this.posX = posX;
@@ -36,6 +38,8 @@ public class PlantAgentState extends SearchBasedAgentState {
 		this.energiaGastada = energiaGastada;
 		this.movimientos = movimientos;
 		this.ultimoExplorado = ultimoExplorado;
+		this.setPerdi(perdi);
+		this.avanzan=avanzan;
 	}
 	
 	
@@ -54,6 +58,7 @@ public class PlantAgentState extends SearchBasedAgentState {
 		if(otro.getPosX()!=this.posX) return false;
 		if(otro.getPosY()!=this.posY) return false;
 		if(otro.getZombiesRestantes()!=this.zombiesRestantes) return false;
+		if(otro.getPerdi()!=this.getPerdi()) return false;
 		
 		for(int i = 0; i<5 ; ++i) {
 			if(this.ultimoExplorado[i]!= otro.getUltimoExplorado()[i]) return false;
@@ -79,7 +84,7 @@ public class PlantAgentState extends SearchBasedAgentState {
 				nuevaMatrizZombies[i][j] = this.matrizZombies[i][j];
 			}
 		}		
-		return new PlantAgentState(energia, posX, posY, nuevaMatrizZombies, nuevaMatrizGirasoles, zombiesRestantes,energiaGastada, movimientos,nuevoUltimoExplorado);
+		return new PlantAgentState(energia, posX, posY, nuevaMatrizZombies, nuevaMatrizGirasoles, zombiesRestantes,energiaGastada, movimientos,nuevoUltimoExplorado, getPerdi(),avanzan);
 	}
 
 	@Override
@@ -121,6 +126,10 @@ public class PlantAgentState extends SearchBasedAgentState {
 		case Sensor.ZOMBIE:
 			matrizZombies[posY][posX+per.derecha.distancia]=per.derecha.energia;
 		}
+		//No sabemos si vinieron mas zombies atras
+		for(int i=posX+per.derecha.distancia+1 ; i<9 ; ++i ) {
+			matrizZombies[posY][i] = this.DESCONOCIDO;
+		}
 		
 		
 		//Arriba
@@ -148,7 +157,19 @@ public class PlantAgentState extends SearchBasedAgentState {
 				matrizZombies[posY+per.abajo.distancia][posX]=per.abajo.energia;
 			}
 		}
-		
+		//Asumimos que los zombies fuera de vista se mueven
+		if(avanzan)
+		for(int i=posX+2 ; i<9 ; ++i) {
+			for(int j=0; j<5; ++j) {
+				if(j!=posY) {
+					if(matrizZombies[j][i]>0) {
+						matrizZombies[j][i-1]= matrizZombies[j][i];
+						matrizZombies[j][i]=this.DESCONOCIDO;
+					}
+				}
+			}
+		}
+		avanzan=!avanzan;
 		
 	}
 
@@ -201,6 +222,7 @@ public class PlantAgentState extends SearchBasedAgentState {
 		matrizZombies = new Integer[5][9];
 		matrizGirasoles = new Integer[5][9];
 		ultimoExplorado = new Integer[5];
+		perdi=false;
 		for(int i = 0; i<5 ; ++i) {
 			ultimoExplorado[i]=6;
 			for(int j=0; j<9; j++) {
@@ -216,21 +238,24 @@ public class PlantAgentState extends SearchBasedAgentState {
 		zombiesRestantes= rand.nextInt(16)+5;
 		energiaGastada=0;
 		movimientos=0;
+		avanzan=false;
 		
 		
 	}
 	
 	public void percepcionFalsa() {
 		for(int i =0;i<5;i++) {
+			if(matrizZombies[i][0]>0 && avanzan) setPerdi(true);
 			for(int j=0;j<9;j++) {
 				if((i==posY||j==posX)&& matrizZombies[i][j]==PlantAgentState.DESCONOCIDO) matrizZombies[i][j]=Sensor.VACIO;
 				if(matrizGirasoles[i][j]>=0) matrizGirasoles[i][j]+=1;
-				if(matrizZombies[i][j]>0&&j>0) {
+				if(matrizZombies[i][j]>0&&j>0 && avanzan) {
 					matrizZombies[i][j-1]=matrizZombies[i][j];
 					matrizZombies[i][j]=PlantAgentState.DESCONOCIDO;
 				}
-				}
+			}
 		}
+		avanzan=!avanzan;
 	}
 	
 	public boolean exploreTodo() {
@@ -341,6 +366,26 @@ public class PlantAgentState extends SearchBasedAgentState {
 
 	public void setUltimoExplorado(Integer[] ultimoExplorado) {
 		this.ultimoExplorado = ultimoExplorado;
+	}
+
+
+	public Boolean getPerdi() {
+		return perdi;
+	}
+
+
+	public void setPerdi(Boolean perdi) {
+		this.perdi = perdi;
+	}
+
+
+	public Boolean getAvanzan() {
+		return avanzan;
+	}
+
+
+	public void setAvanzan(Boolean avanzan) {
+		this.avanzan = avanzan;
 	}
 	
 	

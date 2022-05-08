@@ -14,6 +14,7 @@ public class MoverseAbajo extends SearchAction{
     public SearchBasedAgentState execute(SearchBasedAgentState s) {
         PlantAgentState p= (PlantAgentState) s;
         if(p.getEnergia()<=0) return null;
+        if(p.getPerdi()) return null;
         if(p.getMatrizZombies()[p.getPosY()][p.getPosX()]>0) return null;
         if(p.getPosY()==4) return null;
         p.setPosY(p.getPosY()+1);
@@ -40,6 +41,7 @@ public class MoverseAbajo extends SearchAction{
     public EnvironmentState execute(AgentState ast, EnvironmentState est) {
         PlantAgentState p= (PlantAgentState) ast;
         if(p.getEnergia()<=0) return null;
+        if(p.getPerdi()) return null;
         PlantEnvironmentState e = (PlantEnvironmentState) est;
         if(p.getMatrizZombies()[p.getPosY()][p.getPosX()]>0) return null;
         if(p.getPosY()==4) return null;
