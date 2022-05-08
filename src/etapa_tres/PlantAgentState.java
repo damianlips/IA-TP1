@@ -170,6 +170,27 @@ public class PlantAgentState extends SearchBasedAgentState {
 			}
 		}
 		avanzan=!avanzan;
+		Boolean[] primerZombie= new Boolean[5];
+		for(int i=0;i<5;i++) primerZombie[i]=true;
+		for(int i=0;i<5;i++) {
+			for(int j=0;j<9;j++) {
+				if(i!=posY&&j!=posX) {
+					if(matrizZombies[i][j]==Sensor.VACIO) {
+					if(j==8) matrizZombies[i][j]=PlantAgentState.DESCONOCIDO;
+					else if(matrizZombies[i][j+1]==PlantAgentState.DESCONOCIDO||matrizZombies[i][j+1]>0) 
+						matrizZombies[i][j]=PlantAgentState.DESCONOCIDO; 
+					}
+					else if(j<7) 
+						if(j+1==posX&&(matrizZombies[i][j+2]==PlantAgentState.DESCONOCIDO||matrizZombies[i][j+2]>0)) {
+						matrizZombies[i][j]=PlantAgentState.DESCONOCIDO; 
+						}
+				}
+				if(!primerZombie[i])
+					matrizZombies[i][j]=PlantAgentState.DESCONOCIDO;
+				if(primerZombie[i]&&matrizZombies[i][j]>0&&!(i==posY&&j==posX))
+					primerZombie[i]=false;
+			}
+		}
 		
 	}
 
@@ -272,6 +293,12 @@ public class PlantAgentState extends SearchBasedAgentState {
 			}
 		}
 		return false;
+	}
+	public Boolean filaGirasoles() {
+		for(int i=0;i<5;i++) {
+			if(matrizGirasoles[i][0]<0) return false;
+		}
+		return true;
 	}
 
 	public void setCero() {

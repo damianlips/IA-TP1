@@ -48,6 +48,7 @@ public class MoverseIzquierda extends SearchAction{
         if(p.getMatrizZombies()[p.getPosY()][p.getPosX()]>0) {
         	p.setEnergia(p.getEnergia()-p.getMatrizZombies()[p.getPosY()][p.getPosX()]*2);
         	p.getMatrizZombies()[p.getPosY()][p.getPosX()]=0;
+        	p.setZombiesRestantes(p.getZombiesRestantes()-1);
         	e.getMapa()[p.getPosY()][p.getPosX()]=0;
         	//e.setCantZombies(e.getCantZombies()-1);
         }

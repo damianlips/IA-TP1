@@ -8,10 +8,13 @@ public class PlantGoal extends GoalTest {
 	@Override
 	public boolean isGoalState(AgentState agentState) {
 		PlantAgentState state = (PlantAgentState)agentState;
-		if(state.getEnergia()>0 && state.getZombiesRestantes()==0)
+		if(state.getEnergia()>0 && state.getZombiesRestantes()<=0&&!state.hayZombiesVistos()) {
 			return true;
+		}
 		else {
-			if(!state.hayZombiesVistos() && state.exploreTodo() && state.getEnergia()>1 && !state.getPerdi()) return true;
+			if(!state.hayZombiesVistos() && state.exploreTodo() && state.getEnergia()>0&&state.filaGirasoles()) {
+				return true;
+			}
 			else return false;
 		}
 	}

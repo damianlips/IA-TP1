@@ -26,7 +26,7 @@ public class Heuristic implements IEstimatedCostFunction {
 			}
 		}
 		
-		return costo+state.getZombiesRestantes()-cant;
+		return state.getZombiesRestantes()-cant*0.5;
 	}
 
 }
