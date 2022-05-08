@@ -1,6 +1,7 @@
 package actions;
 
 import etapa_dos.PlantEnvironmentState;
+import etapa_dos.Girasol;
 import etapa_tres.PlantAgentState;
 import frsf.cidisi.faia.agent.search.SearchAction;
 import frsf.cidisi.faia.agent.search.SearchBasedAgentState;
@@ -12,6 +13,7 @@ public class MoverseAbajo extends SearchAction{
     @Override
     public SearchBasedAgentState execute(SearchBasedAgentState s) {
         PlantAgentState p= (PlantAgentState) s;
+        if(p.getEnergia()<=0) return null;
         if(p.getMatrizZombies()[p.getPosY()][p.getPosX()]>0) return null;
         if(p.getPosY()==4) return null;
         p.setPosY(p.getPosY()+1);
@@ -20,10 +22,12 @@ public class MoverseAbajo extends SearchAction{
         	p.getMatrizZombies()[p.getPosY()][p.getPosX()] = 0;
         	p.setZombiesRestantes(p.getZombiesRestantes()-1);
         }
-        else if(p.getMatrizGirasoles()[p.getPosY()][p.getPosX()]>0) p.setEnergia(p.getEnergia()+p.getMatrizGirasoles()[p.getPosY()][p.getPosX()]);
+        else if(p.getMatrizGirasoles()[p.getPosY()][p.getPosX()]>0) {
+        	p.setEnergia(p.getEnergia()+p.getMatrizGirasoles()[p.getPosY()][p.getPosX()]);
+        	p.getMatrizGirasoles()[p.getPosY()][p.getPosX()]=0;
+        }
         //p.setCero();
         p.percepcionFalsa();
-        System.out.println("hola");
         return p;
     }
 
@@ -35,6 +39,7 @@ public class MoverseAbajo extends SearchAction{
     @Override
     public EnvironmentState execute(AgentState ast, EnvironmentState est) {
         PlantAgentState p= (PlantAgentState) ast;
+        if(p.getEnergia()<=0) return null;
         PlantEnvironmentState e = (PlantEnvironmentState) est;
         if(p.getMatrizZombies()[p.getPosY()][p.getPosX()]>0) return null;
         if(p.getPosY()==4) return null;
@@ -46,7 +51,11 @@ public class MoverseAbajo extends SearchAction{
         	e.getMapa()[p.getPosY()][p.getPosX()]=0;
         	e.setCantZombies(e.getCantZombies()-1);
         }
-        else if(p.getMatrizGirasoles()[p.getPosY()][p.getPosX()]>0) p.setEnergia(p.getEnergia()+p.getMatrizGirasoles()[p.getPosY()][p.getPosX()]);
+        else if(p.getMatrizGirasoles()[p.getPosY()][p.getPosX()]>0) {
+        	p.setEnergia(p.getEnergia()+p.getMatrizGirasoles()[p.getPosY()][p.getPosX()]);
+        	p.getMatrizGirasoles()[p.getPosY()][p.getPosX()]=0;
+        	((Girasol) e.getMapa()[p.getPosY()][p.getPosX()]).setCantSoles(0);
+        }
         e.setAgentY(e.getAgentY()+1);
         e.setEnergiaAgente(p.getEnergia());
         return e;

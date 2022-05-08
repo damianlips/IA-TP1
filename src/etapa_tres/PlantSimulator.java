@@ -20,8 +20,8 @@ public class PlantSimulator extends SearchBasedAgentSimulator {
     public boolean agentSucceeded(Action actionReturned) {
         
         PlantAgentState state = (PlantAgentState) ((PlantAgent)getAgents().firstElement()).getAgentState();
-        PlantEnvironmentState envState = (PlantEnvironmentState) this.getEnvironment().getEnvironmentState();
-		if(state.getEnergia()>0 && envState.getCantZombies()==0)
+        //PlantEnvironmentState envState = (PlantEnvironmentState) this.getEnvironment().getEnvironmentState();
+		if(state.getEnergia()>0 && state.getZombiesRestantes()==0)
 			return true;
 		else return false;
         
