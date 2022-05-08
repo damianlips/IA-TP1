@@ -36,6 +36,13 @@ public class PlantEnvironmentState extends EnvironmentState {
 		siguienteZombie=3+(int)Math.random()*4;
 		agentX=0;
 		agentY=2;
+		for(int i=0 ; i<5 ; ++i) {
+			int rand = (int)(Math.random()*9);
+			if(rand<3) {
+				mapa[i][8]=new Zombie();
+				--cantZombies;
+			}
+		}
 	}
 	//Funcion que se ejecuta en cada ciclo accion-percepcion
 	public void update() {

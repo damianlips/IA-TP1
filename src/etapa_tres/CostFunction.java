@@ -35,6 +35,7 @@ public class CostFunction implements IStepCostFunction {
 				if(zombies[i][j]>0) {
 					costo+= Math.pow(2,j+1);
 				}
+				else if(zombies[i][j]==PlantAgentState.DESCONOCIDO) ++costo;
 			}
 		}
 		

@@ -281,7 +281,16 @@ public class PlantAgentState extends SearchBasedAgentState {
 	
 	public boolean exploreTodo() {
 		for(int i=0; i<5; i++) {
-			if(ultimoExplorado[i]>3) return false;
+			if(ultimoExplorado[i]>4) return false;
+		}
+		return true;
+	}
+	
+	public boolean exploreCasiTodo() {
+		for(int i=0;i<5;i++) {
+		   for(int j=0;j<7;j++) {
+		      if(matrizZombies[i][j]==PlantAgentState.DESCONOCIDO) return false;
+		   }
 		}
 		return true;
 	}
