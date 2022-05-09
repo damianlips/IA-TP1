@@ -1,5 +1,9 @@
 package etapa_dos;
 
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+
+import etapa_tres.Graficador;
 import frsf.cidisi.faia.agent.Action;
 import frsf.cidisi.faia.state.AgentState;
 import frsf.cidisi.faia.state.EnvironmentState;
@@ -18,7 +22,8 @@ public class PlantEnvironmentState extends EnvironmentState {
 	//Posicion del agente
 	private int agentX;
 	private int agentY;
-	
+	private Graficador graficador = new Graficador();
+	private JFrame frame = new JFrame("Image display");
 	
 	
 	@Override
@@ -117,7 +122,10 @@ public class PlantEnvironmentState extends EnvironmentState {
 			//System.out.println();
 			str.append(System.getProperty("line.separator"));
 		}
-		
+		JPanel panel = this.graficador.graficar(matriz);
+		frame.add(panel);
+        frame.setSize(900,550);
+        frame.setVisible(true);
 		return str.toString();
 	}
 	public Boolean getLlegoZombie() {
