@@ -59,15 +59,15 @@ public class PlantAgentState extends SearchBasedAgentState {
 		if(otro.getPosY()!=this.posY) return false;
 		if(otro.getZombiesRestantes()!=this.zombiesRestantes) return false;
 		if(otro.getPerdi()!=this.getPerdi()) return false;
-		
+		/*
 		for(int i = 0; i<5 ; ++i) {
-			if(this.ultimoExplorado[i]!= otro.getUltimoExplorado()[i]) return false;
+			//if(this.ultimoExplorado[i]!= otro.getUltimoExplorado()[i]) return false;
 			for(int j= 0 ; j<9 ; ++j) {
-				if(this.matrizGirasoles[i][j] != otro.getMatrizGirasoles()[i][j]) return false;
-				if(this.matrizZombies[i][j] != otro.getMatrizZombies()[i][j]) return false;
+				//if(this.matrizGirasoles[i][j] != otro.getMatrizGirasoles()[i][j]) return false;
+				//if(this.matrizZombies[i][j] != otro.getMatrizZombies()[i][j]) return false;
 			}
 		}
-		
+		*/
 		return true;
 		
 	}
@@ -158,17 +158,29 @@ public class PlantAgentState extends SearchBasedAgentState {
 			}
 		}
 		//Asumimos que los zombies fuera de vista se mueven
-		if(avanzan)
-		for(int i=posX+2 ; i<9 ; ++i) {
-			for(int j=0; j<5; ++j) {
-				if(j!=posY) {
-					if(matrizZombies[j][i]>0) {
-						matrizZombies[j][i-1]= matrizZombies[j][i];
-						matrizZombies[j][i]=this.DESCONOCIDO;
+		if(avanzan) {
+			for(int i=0 ; i<posX ; ++i) {
+				for(int j=0; j<5; ++j) {
+					if(j!=posY) {
+						if(matrizZombies[j][i]>0) {
+							matrizZombies[j][i-1]= matrizZombies[j][i];
+							matrizZombies[j][i]=this.DESCONOCIDO;
+						}
+					}
+				}
+			}
+			for(int i=posX+2 ; i<9 ; ++i) {
+				for(int j=0; j<5; ++j) {
+					if(j!=posY) {
+						if(matrizZombies[j][i]>0) {
+							matrizZombies[j][i-1]= matrizZombies[j][i];
+							matrizZombies[j][i]=this.DESCONOCIDO;
+						}
 					}
 				}
 			}
 		}
+		
 		avanzan=!avanzan;
 		Boolean[] primerZombie= new Boolean[5];
 		for(int i=0;i<5;i++) primerZombie[i]=true;
@@ -270,7 +282,7 @@ public class PlantAgentState extends SearchBasedAgentState {
 			for(int j=0;j<9;j++) {
 				if((i==posY||j==posX)&& matrizZombies[i][j]==PlantAgentState.DESCONOCIDO) matrizZombies[i][j]=Sensor.VACIO;
 				if(matrizGirasoles[i][j]>=0) matrizGirasoles[i][j]+=1;
-				if(matrizZombies[i][j]>0&&j>0 && avanzan) {
+				if(matrizZombies[i][j]>0&&j>0 && (avanzan|| j<4)) {
 					matrizZombies[i][j-1]=matrizZombies[i][j];
 					matrizZombies[i][j]=PlantAgentState.DESCONOCIDO;
 				}

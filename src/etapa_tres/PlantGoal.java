@@ -9,13 +9,11 @@ public class PlantGoal extends GoalTest {
 	public boolean isGoalState(AgentState agentState) {
 		PlantAgentState state = (PlantAgentState)agentState;
 		if(state.getEnergia()>0 && state.getZombiesRestantes()<=0&&!state.hayZombiesVistos()) {
-			System.out.println(state.getZombiesRestantes());
 			return true;
 		}
 		else {
-			//if(!state.hayZombiesVistos() && state.exploreTodo() && state.getEnergia()>0&&state.filaGirasoles()) {
-			if(!state.hayZombiesVistos() && state.exploreCasiTodo() && state.getEnergia()>0 && state.filaGirasoles()) {
-				System.out.println(state.getZombiesRestantes());
+			if(!state.hayZombiesVistos() && state.exploreTodo() && state.getEnergia()>0&&state.filaGirasoles()) {
+			//if(!state.hayZombiesVistos() && state.exploreCasiTodo() && state.getEnergia()>0 && state.filaGirasoles()) {
 				return true;
 			}
 			else return false;

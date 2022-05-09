@@ -23,10 +23,23 @@ public class Heuristic implements IEstimatedCostFunction {
 					costo+= Math.pow(2,j+1);
 					++cant;
 				}
+				else if (zombies[i][j]==PlantAgentState.DESCONOCIDO) {
+					//costo+= Math.pow(2,j+1)*Math.abs(state.getPosY()-i);
+					costo+= state.getUltimoExplorado()[i]*Math.abs(state.getPosY()-i);					
+				}
+			}
+		}/*
+		for(int i=0; i<5; i++) {
+			for(int j=0; j<9; j++) {
+				if(zombies[i][j]==PlantAgentState.DESCONOCIDO) {
+					costo+= Math.pow(2,j+1);
+				}
 			}
 		}
+		*/
 		
-		return state.getZombiesRestantes()-cant*0.5;
+		return costo + ((state.getZombiesRestantes()-cant)*2);
+		//return state.getZombiesRestantes()-cant*0.5;
 	}
 
 }
