@@ -122,17 +122,30 @@ public class Graficador {
 	        ImageIcon grass3 = procesar(new ImageIcon("imagen\\pvz\\grass3.jpg"));
 	        ImageIcon plant = procesar(new ImageIcon("imagen\\pvz\\plant.jpg"));
 	        ImageIcon plantk = procesar(new ImageIcon("imagen\\pvz\\plantk.jpg"));
+	        ImageIcon sun0 = procesar(new ImageIcon("imagen\\pvz\\sun0.jpg"));
 	        ImageIcon sun1 = procesar(new ImageIcon("imagen\\pvz\\sun1.jpg"));
 	        ImageIcon sun2 = procesar(new ImageIcon("imagen\\pvz\\sun2.jpg"));
 	        ImageIcon sun3 = procesar(new ImageIcon("imagen\\pvz\\sun3.jpg"));
 	        ImageIcon sun4 = procesar(new ImageIcon("imagen\\pvz\\sun4.jpg"));
 	        ImageIcon sun5 = procesar(new ImageIcon("imagen\\pvz\\sun5.jpg"));
 	        ImageIcon sunx = procesar(new ImageIcon("imagen\\pvz\\sunx.jpg"));
-	        ImageIcon zombie = procesar(new ImageIcon("imagen\\pvz\\raccon.jpg"));
+	        ImageIcon zombie1 = procesar(new ImageIcon("imagen\\pvz\\zombie1.jpg"));
+	        ImageIcon zombie2 = procesar(new ImageIcon("imagen\\pvz\\zombie2.jpg"));
+	        ImageIcon zombie3 = procesar(new ImageIcon("imagen\\pvz\\zombie3.jpg"));
+	        ImageIcon zombie4 = procesar(new ImageIcon("imagen\\pvz\\zombie4.jpg"));
+	        ImageIcon zombie5 = procesar(new ImageIcon("imagen\\pvz\\zombie5.jpg"));
+	        
 	        for(int i=0; i<5; i++) {
 				for(int j=0; j<9; j++) {
 					JLabel labelAux = new JLabel(grass1);
-					if(mapa[i][j].charAt(0) == 'Z') labelAux= new JLabel(zombie);
+					if(mapa[i][j].charAt(0) == 'Z') {
+						int val = mapa[i][j].charAt(1)-'0';
+						if(val==1) labelAux = new JLabel(zombie1);
+						else if(val==2) labelAux = new JLabel(zombie2);
+						else if(val==3) labelAux = new JLabel(zombie3);
+						else if(val==4) labelAux = new JLabel(zombie4);
+						else if(val==5) labelAux = new JLabel(zombie5);
+					}
 					else if(mapa[i][j].charAt(0) == 'G') {
 						int val = 0;
 						for(int k = 1; k<mapa[i][j].length(); k++) {
@@ -140,7 +153,8 @@ public class Graficador {
 							val+=(mapa[i][j].charAt(k)-'0');
 						}
 						// FALTA EL CERO
-						if(val <= 1) labelAux = new JLabel(sun1);
+						if(val==0) labelAux = new JLabel(sun0);
+						else if(val==1) labelAux = new JLabel(sun1);
 						else if(val==2) labelAux = new JLabel(sun2);
 						else if(val==3) labelAux = new JLabel(sun3);
 						else if(val==4) labelAux = new JLabel(sun4);
