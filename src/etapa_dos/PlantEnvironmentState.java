@@ -129,9 +129,9 @@ public class PlantEnvironmentState extends EnvironmentState {
 			str.append(System.getProperty("line.separator"));
 		}
 		JPanel panel = this.graficador.graficar(matriz);
-		frame.add(panel);
-        frame.setSize(900,550);
-        frame.setVisible(true);
+//		frame.add(panel);
+//        frame.setSize(900,550);
+//        frame.setVisible(true);
 		return str.toString();
 	}
 	public Boolean getLlegoZombie() {

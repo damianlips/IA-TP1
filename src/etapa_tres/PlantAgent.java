@@ -13,7 +13,9 @@ import frsf.cidisi.faia.agent.search.SearchBasedAgent;
 import frsf.cidisi.faia.solver.search.AStarSearch;
 import frsf.cidisi.faia.solver.search.BreathFirstSearch;
 import frsf.cidisi.faia.solver.search.DepthFirstSearch;
+import frsf.cidisi.faia.solver.search.IStepCostFunction;
 import frsf.cidisi.faia.solver.search.Search;
+import frsf.cidisi.faia.solver.search.UniformCostSearch;
 
 public class PlantAgent extends SearchBasedAgent {
 
@@ -67,12 +69,14 @@ public class PlantAgent extends SearchBasedAgent {
 		// Create the search strategy
         //DepthFirstSearch strategy = new DepthFirstSearch();
 		
-		CostFunction cost = new CostFunction();
-        Heuristic heuristic = new Heuristic();
-        AStarSearch strategy = new AStarSearch(cost, heuristic);
-	
+//		CostFunction cost = new CostFunction();
+//        Heuristic heuristic = new Heuristic();
+//        AStarSearch strategy = new AStarSearch(cost, heuristic);
+		IStepCostFunction costFunction = new CostFunction();
+        UniformCostSearch strategy = new UniformCostSearch(costFunction);
 		//BreathFirstSearch strategy = new BreathFirstSearch();
         /**
+         * 
          * Another search strategy examples:
          * 
          * Depth First Search:
