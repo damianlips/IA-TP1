@@ -12,7 +12,7 @@ public class CostFunction implements IStepCostFunction {
 		Integer[][] zombies = state.getMatrizZombies();
 		Double costo=0d;
 		//System.out.println(state.getPosY());
-		
+		/*
 		if(node.getAction() instanceof MatarZombieAbajo
 				|| node.getAction() instanceof MatarZombieArriba
 				|| node.getAction() instanceof MatarZombieIzquierda
@@ -28,17 +28,17 @@ public class CostFunction implements IStepCostFunction {
 				) {
 			costo+= Math.pow(2,state.getPosX()+2);			
 		}
-				
-		/*
+			*/	
+		
 		for(int i=0; i<5; i++) {
 			for(int j=0; j<9; j++) {
 				if(zombies[i][j]>0) {
 					costo+= Math.pow(2,j+1);
 				}
-				else if(zombies[i][j]==PlantAgentState.DESCONOCIDO) ++costo;
+				else if(zombies[i][j]==PlantAgentState.DESCONOCIDO) costo+=state.getUltimoExplorado()[i];
 			}
 		}
-		*/
+		/*
 		for(int i=0; i<5; i++) {
 			for(int j=0; j<9; j++) {
 				if(zombies[i][j]==PlantAgentState.DESCONOCIDO) {
@@ -46,7 +46,7 @@ public class CostFunction implements IStepCostFunction {
 					costo+=state.getUltimoExplorado()[i];
 				}
 			}
-		}
+		}*/
 		
 		return costo;
 		

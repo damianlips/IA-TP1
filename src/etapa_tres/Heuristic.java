@@ -20,7 +20,7 @@ public class Heuristic implements IEstimatedCostFunction {
 		for(int i=0; i<5; i++) {
 			for(int j=0; j<9; j++) {
 				if(zombies[i][j]>0) {
-					costo+= Math.pow(2,j+1);
+					costo+= Math.pow(2,j+1)*Math.abs(state.getPosY()-i);
 					++cant;
 				}
 				else if (zombies[i][j]==PlantAgentState.DESCONOCIDO) {

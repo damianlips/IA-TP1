@@ -35,10 +35,10 @@ public class PlantEnvironmentState extends EnvironmentState {
 				mapa[j][i]=0;
 			}
 		}
-		energiaAgente=2+(int)Math.random()*18;
-		cantZombies=5+(int)Math.random()*15;
+		energiaAgente=2+(int)(Math.random()*18);
+		cantZombies=5+(int)(Math.random()*15);
 		llegoZombie=false;
-		siguienteZombie=3+(int)Math.random()*4;
+		siguienteZombie=3+(int)(Math.random()*4);
 		agentX=0;
 		agentY=2;
 		
@@ -46,8 +46,8 @@ public class PlantEnvironmentState extends EnvironmentState {
 	
 	public void zombiesDeInicio() {
 		for(int i=0 ; i<5 ; ++i) {
-			int rand = (int)(Math.random()*9);
-			if(rand<3 && cantZombies>0) {
+			int rand = (int)(Math.random()*13);
+			if(rand<2 && cantZombies>0) {
 				mapa[i][8]=new Zombie();
 				--cantZombies;
 			}
