@@ -20,6 +20,7 @@ public class PlantAgentState extends SearchBasedAgentState {
 	private Integer[] ultimoExplorado;
 	private Boolean perdi;
 	private Boolean avanzan;
+	private Boolean mate;
 	
 	public final static int DESCONOCIDO = -1; 
 	
@@ -40,6 +41,7 @@ public class PlantAgentState extends SearchBasedAgentState {
 		this.ultimoExplorado = ultimoExplorado;
 		this.setPerdi(perdi);
 		this.avanzan=avanzan;
+		this.mate = false;
 	}
 	
 	
@@ -282,7 +284,7 @@ public class PlantAgentState extends SearchBasedAgentState {
 			for(int j=0;j<9;j++) {
 				if((i==posY||j==posX)&& matrizZombies[i][j]==PlantAgentState.DESCONOCIDO) matrizZombies[i][j]=Sensor.VACIO;
 				if(matrizGirasoles[i][j]>=0) matrizGirasoles[i][j]+=1;
-				if(matrizZombies[i][j]>0&&j>0 && (avanzan|| j<4)) {
+				if(matrizZombies[i][j]>0&&j>0 && (avanzan|| j<1)) {
 					matrizZombies[i][j-1]=matrizZombies[i][j];
 					matrizZombies[i][j]=PlantAgentState.DESCONOCIDO;
 				}
@@ -436,6 +438,9 @@ public class PlantAgentState extends SearchBasedAgentState {
 		this.avanzan = avanzan;
 	}
 	
+	public void setMate(Boolean val) {
+		this.mate=val;
+	}
 	
 	
 

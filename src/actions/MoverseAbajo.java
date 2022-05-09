@@ -40,6 +40,7 @@ public class MoverseAbajo extends SearchAction{
     @Override
     public EnvironmentState execute(AgentState ast, EnvironmentState est) {
         PlantAgentState p= (PlantAgentState) ast;
+        p.setMate(false);
         if(p.getEnergia()<=0) return null;
         if(p.getPerdi()) return null;
         PlantEnvironmentState e = (PlantEnvironmentState) est;
@@ -58,6 +59,7 @@ public class MoverseAbajo extends SearchAction{
         	p.getMatrizGirasoles()[p.getPosY()][p.getPosX()]=0;
         	((Girasol) e.getMapa()[p.getPosY()][p.getPosX()]).setCantSoles(0);
         }
+        e.setMate(false);
         e.setAgentY(e.getAgentY()+1);
         e.setEnergiaAgente(p.getEnergia());
         return e;

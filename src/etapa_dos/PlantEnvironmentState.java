@@ -1,5 +1,7 @@
 package etapa_dos;
 
+import java.util.Random;
+
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
@@ -22,6 +24,7 @@ public class PlantEnvironmentState extends EnvironmentState {
 	//Posicion del agente
 	private int agentX;
 	private int agentY;
+	private Boolean mate;
 	private Graficador graficador = new Graficador();
 	private JFrame frame = new JFrame("Image display");
 	
@@ -35,18 +38,20 @@ public class PlantEnvironmentState extends EnvironmentState {
 				mapa[j][i]=0;
 			}
 		}
-		energiaAgente=2+(int)(Math.random()*18);
-		cantZombies=5+(int)(Math.random()*15);
+		Random random = new Random();
+		energiaAgente=2+random.nextInt(19);
+		cantZombies=5+random.nextInt(16);
 		llegoZombie=false;
-		siguienteZombie=3+(int)(Math.random()*4);
+		siguienteZombie=3+random.nextInt(5);
 		agentX=0;
 		agentY=2;
-		
+		mate=false;
 	}
 	
 	public void zombiesDeInicio() {
+		Random random = new Random();
 		for(int i=0 ; i<5 ; ++i) {
-			int rand = (int)(Math.random()*13);
+			int rand = random.nextInt(14);
 			if(rand<2 && cantZombies>0) {
 				mapa[i][8]=new Zombie();
 				--cantZombies;
@@ -88,9 +93,10 @@ public class PlantEnvironmentState extends EnvironmentState {
 		//Generacion de nuevos zombies
 		if(cantZombies>0) {
 			if(siguienteZombie<=0) {
-				int posicion=(int)(Math.random()*4);
+				Random random = new Random();
+				int posicion=random.nextInt(5);
 				mapa[posicion][8]=new Zombie();
-				siguienteZombie=3+(int)(Math.random()*4);
+				siguienteZombie=3+random.nextInt(5);
 				--cantZombies;
 			}
 			else siguienteZombie--;
@@ -118,7 +124,8 @@ public class PlantEnvironmentState extends EnvironmentState {
 				}
 			}
 		}
-		matriz[agentY][agentX] = "Pl";
+		if(mate) matriz[agentY][agentX] = "Pk";
+		else matriz[agentY][agentX] = "Pl";
 		
 		for(int i=0; i<5; i++) {
 			for(int j=0; j<9; j++) {
@@ -129,9 +136,15 @@ public class PlantEnvironmentState extends EnvironmentState {
 			str.append(System.getProperty("line.separator"));
 		}
 		JPanel panel = this.graficador.graficar(matriz);
-//		frame.add(panel);
-//        frame.setSize(900,550);
-//        frame.setVisible(true);
+		try {
+			Thread.sleep(80);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		frame.add(panel);
+        frame.setSize(900,550);
+        frame.setVisible(true);
 		return str.toString();
 	}
 	public Boolean getLlegoZombie() {
@@ -259,6 +272,9 @@ public class PlantEnvironmentState extends EnvironmentState {
 	}
 	public void setSiguienteZombie(int siguienteZombie) {
 		this.siguienteZombie = siguienteZombie;
+	}
+	public void setMate(Boolean val) {
+		this.mate = val;
 	}
 	
 

@@ -40,6 +40,8 @@ public class MatarZombieEnMismaCasilla extends SearchAction {
         p.setZombiesRestantes(p.getZombiesRestantes()-1);
         e.getMapa()[e.getAgentY()][e.getAgentX()]=0;
         e.setEnergiaAgente(p.getEnergia());
+        e.setMate(true);
+        p.setMate(true);
         return e;
 	}
 

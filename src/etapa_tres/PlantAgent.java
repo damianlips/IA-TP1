@@ -69,11 +69,11 @@ public class PlantAgent extends SearchBasedAgent {
 		// Create the search strategy
         //DepthFirstSearch strategy = new DepthFirstSearch();
 		
-//		CostFunction cost = new CostFunction();
-//        Heuristic heuristic = new Heuristic();
-//        AStarSearch strategy = new AStarSearch(cost, heuristic);
-		IStepCostFunction costFunction = new CostFunction();
-        UniformCostSearch strategy = new UniformCostSearch(costFunction);
+		CostFunction cost = new CostFunction();
+        Heuristic heuristic = new Heuristic();
+        AStarSearch strategy = new AStarSearch(cost, heuristic);
+//		IStepCostFunction costFunction = new CostFunction();
+//        UniformCostSearch strategy = new UniformCostSearch(costFunction);
 		//BreathFirstSearch strategy = new BreathFirstSearch();
         /**
          * 

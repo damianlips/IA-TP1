@@ -35,6 +35,7 @@ public class PlantarGirasol extends SearchAction{
     @Override
     public EnvironmentState execute(AgentState ast, EnvironmentState est) {
         PlantAgentState p = (PlantAgentState) ast;
+        p.setMate(false);
         if(p.getPerdi()) return null;
         if(p.getEnergia()<=0) return null;
         PlantEnvironmentState e = (PlantEnvironmentState) est;
@@ -46,6 +47,7 @@ public class PlantarGirasol extends SearchAction{
         p.getMatrizGirasoles()[p.getPosY()][p.getPosX()]=0;
         e.getMapa()[e.getAgentY()][e.getAgentX()]= new Girasol();
         e.setEnergiaAgente(p.getEnergia());
+        e.setMate(false);
         return e;
     }
 

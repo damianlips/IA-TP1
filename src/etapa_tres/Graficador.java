@@ -161,7 +161,8 @@ public class Graficador {
 						else if(val==5) labelAux = new JLabel(sun5);
 						else if(val>=6) labelAux = new JLabel(sunx);
 					}
-					else if(mapa[i][j].charAt(0) == 'P') labelAux = new JLabel(plant);
+					else if(mapa[i][j].charAt(1) == 'l') labelAux = new JLabel(plant);
+					else if(mapa[i][j].charAt(1) == 'k') labelAux = new JLabel(plantk);
 					panel.add(labelAux);
 				}
 			}

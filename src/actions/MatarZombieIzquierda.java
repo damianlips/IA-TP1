@@ -45,6 +45,8 @@ public class MatarZombieIzquierda extends SearchAction {
         p.setZombiesRestantes(p.getZombiesRestantes()-1);
         e.getMapa()[e.getAgentY()][e.getAgentX()-1]=0;
         e.setEnergiaAgente(p.getEnergia());
+        e.setMate(true);
+        p.setMate(true);
         return e;
     }
 

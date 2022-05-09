@@ -34,6 +34,7 @@ public class MatarZombieAbajo extends SearchAction {
     public EnvironmentState execute(AgentState ast, EnvironmentState est) {
         // TODO Auto-generated method stub
         PlantAgentState p = (PlantAgentState) ast;
+        
         if(p.getEnergia()<=0) return null;
         if(p.getPerdi()) return null;
         PlantEnvironmentState e = (PlantEnvironmentState) est;
@@ -45,6 +46,8 @@ public class MatarZombieAbajo extends SearchAction {
         p.setZombiesRestantes(p.getZombiesRestantes()-1);
         e.getMapa()[e.getAgentY()+1][e.getAgentX()]=0;
         e.setEnergiaAgente(p.getEnergia());
+        e.setMate(true);
+        p.setMate(true);
         return e;
     }
 
