@@ -27,7 +27,7 @@ public class MoverseDerecha extends SearchAction{
         	p.setEnergia(p.getEnergia()+p.getMatrizGirasoles()[p.getPosY()][p.getPosX()]);
         	p.getMatrizGirasoles()[p.getPosY()][p.getPosX()]=0;
         }
-        
+        p.percepcionFalsa();
         return p;
     }
 
